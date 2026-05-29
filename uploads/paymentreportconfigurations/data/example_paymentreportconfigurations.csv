@@ -1,0 +1,5 @@
+paymentType;transportMethod;pricePerGram;extractionEfficiency;costs;customerProfitPercentage;ratePerTon;ratePerGram;fixedAmount;siteId
+STANDARD;MILEAGE;1540.00;0.85;120.00;60.0;;;; a1b2c3d4-e5f6-4789-a012-3456789abcde
+SPECIAL;AREA;1596.00;0.87;110.00;62.0;;;;a1b2c3d4-e5f6-4789-a012-3456789abcde
+PRICE_PER_TON;NONE;;;;; 850.00;;; a1b2c3d4-e5f6-4789-a012-3456789abcde
+FLAT_RATE;NONE;;;;;; ;1200.00;a1b2c3d4-e5f6-4789-a012-3456789abcde

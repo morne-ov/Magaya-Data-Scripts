@@ -1,0 +1,7 @@
+firstName;lastName;email;contactNumber;roleName;status;siteId
+Alice;Botha;alice.botha@example.com;+27821110001;Admin;ACTIVE;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Brian;Dlamini;brian.dlamini@example.com;+27821110002;Supervisor;ACTIVE;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Carol;Ferreira;carol.ferreira@example.com;+27821110003;Agent;ACTIVE;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Daniel;Govender;daniel.govender@example.com;+27821110004;Lab Technician;ACTIVE;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Elna;Hartmann;elna.hartmann@example.com;+27821110005;Ground Operator;ACTIVE;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Frank;Jacobs;frank.jacobs@example.com;+27821110006;Viewer;INACTIVE;a1b2c3d4-e5f6-4789-a012-3456789abcde

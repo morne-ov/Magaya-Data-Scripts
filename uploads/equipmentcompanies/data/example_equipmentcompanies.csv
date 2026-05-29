@@ -1,0 +1,4 @@
+name;companyType;businessType;natureOfBusiness;yearEstablished;registrationNumber;tel;contactName;email;physicalAddress;siteId
+Rapid Haulage (Pty) Ltd;EXTERNAL;CORPORATE_LIMITED;TRANSPORTING;2015;2015/123456/07;+27114445555;James Steyn;james@rapidhaulage.co.za;12 Industrial Road, Johannesburg;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Goldfields Transport CC;EXTERNAL;PARTNERSHIP;TRUCKING;2008;2008/654321/23;+27183336666;Maria Venter;maria@goldfieldscc.co.za;7 Mine Road, Welkom;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Site Logistics Internal;INTERNAL;CORPORATE_LIMITED;TRANSPORTING;2010;2010/111222/07;+27561112222;Henry Kruger;henry@sitelogistics.co.za;On-site, Amatola Mine;a1b2c3d4-e5f6-4789-a012-3456789abcde

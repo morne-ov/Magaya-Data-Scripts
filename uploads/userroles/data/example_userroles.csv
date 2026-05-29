@@ -1,0 +1,7 @@
+name;description;isSystem;isActive;siteId
+Admin;Full system access - all resources and actions;true;true;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Supervisor;Can approve and reject payment reports;false;true;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Agent;Can create and manage weighbridge entries;false;true;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Lab Technician;Can receive samples and record grading results;false;true;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Ground Operator;Can capture and process ground operations data;false;true;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Viewer;Read-only access to reports and dashboards;false;true;a1b2c3d4-e5f6-4789-a012-3456789abcde

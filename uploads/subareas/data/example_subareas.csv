@@ -1,0 +1,9 @@
+name;operationType;siteId
+North Pit;MINING;a1b2c3d4-e5f6-4789-a012-3456789abcde
+South Dump;DUMP;a1b2c3d4-e5f6-4789-a012-3456789abcde
+East Claim;CLAIM;a1b2c3d4-e5f6-4789-a012-3456789abcde
+West Shaft Area;INTERNAL;a1b2c3d4-e5f6-4789-a012-3456789abcde
+River Zone;EXTERNAL;a1b2c3d4-e5f6-4789-a012-3456789abcde
+JV Block A;JV;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Main Processing Zone;MINING;a1b2c3d4-e5f6-4789-a012-3456789abcde
+Tailings Dump 1;DUMP;a1b2c3d4-e5f6-4789-a012-3456789abcde
