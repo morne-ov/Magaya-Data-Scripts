@@ -1,0 +1,2569 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+generator typescriptInterfaces {
+  provider          = "prisma-generator-typescript-interfaces"
+  output            = "./typescript-interfaces.ts"
+  geometryInterface = "./geometry.d.ts"
+  previewFeatures   = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [postgis, citext]
+}
+
+model globalSettings {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  field       String   @unique
+  value       String?
+  description String?
+}
+
+model EmailAuditLog {
+  id           String              @id @default(cuid())
+  siteId       String?
+  site         Site?               @relation(fields: [siteId], references: [id])
+  emailType    String
+  recipient    String
+  subject      String
+  body         String
+  status       EmailAuditLogStatus
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+  errorMessage String?
+  messageId    String?
+}
+
+enum EmailAuditLogStatus {
+  SENT
+  FAILED
+  PENDING
+}
+
+model AuditLog {
+  id                 String              @id @default(cuid())
+  siteId             String?
+  site               Site?               @relation(fields: [siteId], references: [id])
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  userId             String
+  method             AuditLogMethod
+  auditRecordDetails AuditRecordDetail[]
+}
+
+enum AuditLogMethod {
+  GET
+  POST
+  PUT
+  DELETE
+}
+
+model AuditRecordDetail {
+  id             String   @id @default(cuid())
+  siteId         String?
+  site           Site?    @relation(fields: [siteId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  auditLogId     String
+  auditLog       AuditLog @relation(fields: [auditLogId], references: [id])
+  recordId       String
+  requestPayload Json
+}
+
+enum SubAreaOperationType {
+  DUMP
+  EXTERNAL
+  INTERNAL
+  JV
+  CLAIM
+  MINING
+}
+
+model SubArea {
+  id                        String                                 @id @default(cuid())
+  siteId                    String?
+  site                      Site?                                  @relation("SubAreaPrimarySite", fields: [siteId], references: [id])
+  name                      String                                 @db.Citext
+  operationType             SubAreaOperationType?
+  sites                     Site[]
+  geometry                  Unsupported("geometry(Polygon,4326)")? @map("geometry") /// @type: Geometry
+  createdAt                 DateTime                               @default(now())
+  updatedAt                 DateTime                               @updatedAt
+  cluster                   Cluster?                               @relation(fields: [clusterId], references: [id])
+  clusterId                 String?
+  workOrders                WorkOrder[]
+  weighbridges              Weighbridge[]
+  areaTransportCosts        AreaTransportCosts[]
+  areaRoyaltyConfigurations AreaRoyaltyConfiguration[]
+  samples                   Sample[]
+  jobs                      Job[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+model Plan {
+  id              String           @id @default(cuid())
+  siteId          String?
+  site            Site?            @relation(fields: [siteId], references: [id])
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  date            DateTime
+  planAssignments PlanAssignment[]
+}
+
+model PlanAssignment {
+  id          String     @id @default(cuid())
+  siteId      String?
+  site        Site?      @relation(fields: [siteId], references: [id])
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  plan        Plan       @relation(fields: [planId], references: [id])
+  planId      String
+  jobs        Job[]
+  equipment   Equipment? @relation(fields: [equipmentId], references: [id])
+  equipmentId String?
+}
+
+model HistoricData {
+  id                          String               @id @default(cuid())
+  siteId                      String?
+  site                        Site?                @relation(fields: [siteId], references: [id])
+  createdAt                   DateTime             @default(now())
+  updatedAt                   DateTime             @updatedAt
+  client_clientId             String?
+  weighbridge_createdAt       DateTime
+  weighbridge_loadCode        String
+  weighbridge_operationType   OperationType?
+  transportCompany            String
+  weighbridge_area            String
+  onTheGround_sandOreType     SandOreType
+  client_name                 String
+  weighbridge_tonnage         Float
+  onTheGround_dryTonnage      Float
+  onTheGround_cleanTonnage    Float
+  onTheGround_debrisFactor    Float
+  stockValue_transportCost    Float
+  stockValue_paidAverageGrade Float
+  stockValue_grossPayment     Float
+  evaluated                   Float
+  stockValue_stockStatus      StockStatus
+  weighbridge_primer          WeighbridgePrimer?
+  weighbridge_prefix          String
+  subArea_cluster             String
+  sustainabilityStatus        SustainabilityStatus
+}
+
+model Client {
+  id               String          @id @default(cuid())
+  siteId           String?
+  site             Site?           @relation(fields: [siteId], references: [id])
+  firstName        String          @db.Citext
+  middleName       String?
+  lastName         String          @db.Citext
+  idNumber         String?
+  address          String?
+  contactNumber    String[]
+  whatsapp         String[]
+  createdBy        User?           @relation(fields: [createdById], references: [id])
+  createdById      String?
+  potentialClient  Boolean         @default(false)
+  email            String[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  shafts           Shaft[]
+  syndicates       Syndicate[]
+  jobs             Job[]
+  status           ClientStatus    @default(ACTIVE)
+  workOrders       WorkOrder[]
+  artisanalMinerId String?
+  samples          Sample[]
+  weighbridges     Weighbridge[]
+  abc              String?
+  clientId         String?
+  paymentReports   PaymentReport[]
+  freeTransport    FreeTransport[]
+
+  @@unique([siteId, idNumber])
+  @@unique([siteId, artisanalMinerId])
+}
+
+model Cluster {
+  id        String                                 @id @default(cuid())
+  siteId    String?
+  site      Site?                                  @relation(fields: [siteId], references: [id])
+  name      String                                 @db.Citext
+  geometry  Unsupported("geometry(Polygon,4326)")? @map("geometry") /// @type: Geometry
+  createdAt DateTime                               @default(now())
+  updatedAt DateTime                               @updatedAt
+  subAreas  SubArea[]
+  jobs      Job[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+model Exception {
+  id          String    @id @default(cuid())
+  siteId      String?
+  site        Site?     @relation(fields: [siteId], references: [id])
+  execution   Execution @relation(fields: [executionId], references: [id])
+  executionId String
+  description String
+  evidence    Json // Array of file paths/URLs
+  actionTaken String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Execution {
+  id          String          @id @default(cuid())
+  siteId      String?
+  site        Site?           @relation(fields: [siteId], references: [id])
+  procedure   Procedure       @relation(fields: [procedureId], references: [id])
+  procedureId String
+  user        User            @relation(fields: [userId], references: [id])
+  userId      String
+  responses   Json // Stores answers for each question
+  status      ExecutionStatus @default(IN_PROGRESS)
+  startTime   DateTime        @default(now())
+  endTime     DateTime?
+  exceptions  Exception[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+}
+
+model Loadbay {
+  id               String         @id @default(cuid())
+  siteId           String?
+  site             Site?          @relation(fields: [siteId], references: [id])
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  name             String         @db.Citext
+  description      String?
+  maxTonnage       Float?
+  maxNumberOfLoads Int?
+  status           LoadbayStatus? @default(AVAILABLE)
+  dateAllocated    DateTime?
+  weighbridges     Weighbridge[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+enum LoadbayStatus {
+  AVAILABLE
+  IN_USE
+  UNAVAILABLE
+  INACTIVE
+}
+
+model Job {
+  id                                String             @id @default(cuid())
+  siteId                            String?
+  site                              Site?              @relation(fields: [siteId], references: [id])
+  createdAt                         DateTime           @default(now())
+  updatedAt                         DateTime           @updatedAt
+  jobNumber                         String             @unique // Auto-generated: JOB-YYYY-NNNN
+  jobCreationDate                   DateTime // Set from createdAt on create; used for year in jobNumber
+  executionDate                     DateTime? // User-entered date when the job is to be executed
+  jobCategory                       JobCategory?
+  projectNumber                     String?
+  department                        JobDepartment?
+  estimatedJobTimeHours             Int?
+  estimatedTonnage                  Int?
+  client                            Client?            @relation(fields: [clientId], references: [id])
+  clientId                          String?
+  description                       String?
+  area                              SubArea?           @relation(fields: [areaId], references: [id])
+  areaId                            String?
+  jobType                           JobType?
+  status                            JobStatus?         @default(PENDING)
+  notes                             String?
+  orderNumber                       Int? // The sequence of the job in a plan assignment
+  planAssignment                    PlanAssignment?    @relation(fields: [planAssignmentId], references: [id])
+  planAssignmentId                  String?
+  weighbridge                       Weighbridge?
+  requester                         User?              @relation(fields: [requesterId], references: [id], name: "Requester")
+  requesterId                       String?
+  jobMaterialType                   JobMaterialType?
+  jobMaterialTypeOtherSpecification String?
+  jobCollectionType                 JobCollectionType?
+  cluster                           Cluster?           @relation(fields: [clusterId], references: [id])
+  clusterId                         String?
+}
+
+enum JobCollectionType {
+  OWN_CLAIM
+  JV
+  BUYING
+  EXPLORATION
+  AFTER_MILLING
+}
+
+enum JobMaterialType {
+  SANDS
+  ORES
+  DUMP
+  GROUND_SCOOP
+  AFTER_MILLING
+  OTHER
+}
+
+enum JobCategory {
+  INTERNAL
+  EXTERNAL
+}
+
+enum JobDepartment {
+  CIP
+  ELUTION
+  LAB
+  GROUND
+  ROUND_MILLS
+  BALL_MILLS
+  SAMPLE_RECEIVING
+  CRUSHING
+  SUPPLY
+  STORES
+}
+
+model JobAttachment {
+  id        String   @id @default(cuid())
+  siteId    String?
+  site      Site?    @relation(fields: [siteId], references: [id])
+  // job       Job      @relation(fields: [jobId], references: [id]) Add this back if we need it otherwise delete table
+  // jobId     String
+  fileUrl   String // URL to the stored file
+  fileType  String // MIME type or file extension
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model JobComment {
+  id        String   @id @default(cuid())
+  siteId    String?
+  site      Site?    @relation(fields: [siteId], references: [id])
+  // job       Job      @relation(fields: [jobId], references: [id]) Add this back if we need it otherwise delete table
+  // jobId     String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Maintenance {
+  id          String    @id @default(cuid())
+  siteId      String?
+  site        Site?     @relation(fields: [siteId], references: [id])
+  equipment   Equipment @relation(fields: [equipmentId], references: [id])
+  equipmentId String
+  description String
+  startDate   DateTime
+  endDate     DateTime?
+  status      String // e.g., scheduled, in-progress, completed
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Procedure {
+  id          String        @id @default(cuid())
+  siteId      String?
+  site        Site?         @relation(fields: [siteId], references: [id])
+  name        String        @db.Citext
+  description String
+  type        ProcedureType
+  questions   Question[]
+  executions  Execution[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@unique([siteId, name])
+}
+
+model Question {
+  id          String       @id @default(cuid())
+  siteId      String?
+  site        Site?        @relation(fields: [siteId], references: [id])
+  procedure   Procedure    @relation(fields: [procedureId], references: [id])
+  procedureId String
+  text        String
+  answerType  AnswerType
+  choices     Json? // For CHOICE type questions
+  order       Int // To maintain question sequence
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  imageUrl    String?
+  type        QuestionType
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  siteId    String?
+  site      Site?    @relation(fields: [siteId], references: [id])
+  userId    String
+  token     String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id])
+
+  @@unique([siteId, token])
+}
+
+model Shaft {
+  id         String                               @id @default(cuid())
+  name       String                               @db.Citext
+  geometry   Unsupported("geometry(Point,4326)")? @map("geometry") /// @type: Geometry
+  createdAt  DateTime                             @default(now())
+  updatedAt  DateTime                             @updatedAt
+  client     Client?                              @relation(fields: [clientId], references: [id])
+  clientId   String?
+  site       Site?                                @relation(fields: [siteId], references: [id])
+  siteId     String?
+  workOrders WorkOrder[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+model Syndicate {
+  id        String   @id @default(cuid())
+  siteId    String?
+  site      Site?    @relation(fields: [siteId], references: [id])
+  name      String   @db.Citext
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  clients   Client[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+model Site {
+  id                                String                                 @id @default(cuid())
+  siteId                            String?
+  name                              String                                 @unique @db.Citext
+  address                           String?
+  geometry                          Unsupported("geometry(Polygon,4326)")? @map("geometry") /// @type: Geometry
+  createdAt                         DateTime                               @default(now())
+  updatedAt                         DateTime                               @updatedAt
+  subAreas                          SubArea[]
+  primarySubAreas                   SubArea[]                              @relation("SubAreaPrimarySite")
+  shafts                            Shaft[]
+  siteExtractionEfficiencies        SiteExtractionEfficiency[]
+  emailAuditLogs                    EmailAuditLog[]
+  auditLogs                         AuditLog[]
+  auditRecordDetails                AuditRecordDetail[]
+  plans                             Plan[]
+  planAssignments                   PlanAssignment[]
+  historicData                      HistoricData[]
+  clients                           Client[]
+  clusters                          Cluster[]
+  exceptions                        Exception[]
+  executions                        Execution[]
+  loadbays                          Loadbay[]
+  jobs                              Job[]
+  jobAttachments                    JobAttachment[]
+  jobComments                       JobComment[]
+  maintenances                      Maintenance[]
+  procedures                        Procedure[]
+  questions                         Question[]
+  sessions                          Session[]
+  syndicates                        Syndicate[]
+  telematics                        Telematics[]
+  users                             User[]
+  userRoles                         UserRole[]
+  userPermissions                   UserPermission[]
+  equipment                         Equipment[]
+  equipmentCompanies                EquipmentCompany[]
+  equipmentCompanyReferences        EquipmentCompanyReference[]
+  equipmentCompanyMembers           EquipmentCompanyMember[]
+  equipmentCompanySeniorManagements EquipmentCompanySeniorManagement[]
+  equipmentCompanyTransporters      EquipmentCompanyTransporter[]
+  equipmentCompanyBankingDetails    EquipmentCompanyBankingDetail[]
+  verificationCodes                 VerificationCode[]
+  companies                         Company[]
+  fleets                            Fleet[]
+  onTheGrounds                      OnTheGround[]
+  areaTransportCosts                AreaTransportCosts[]
+  freeTransports                    FreeTransport[]
+  gradePricings                     GradePricing[]
+  transportPricings                 TransportPricing[]
+  areaRoyaltyConfigurations         AreaRoyaltyConfiguration[]
+  manualDeductions                  ManualDeduction[]
+  stockValues                       StockValue[]
+  paymentReports                    PaymentReport[]
+  reports                           Report[]
+  budgetReports                     BudgetReport[]
+  budgetReportLoads                 BudgetReportLoad[]
+  paymentReportConfigurations       PaymentReportConfiguration[]
+  paymentReportCalculations         PaymentReportCalculation[]
+  paymentReportGeneratedGrades      PaymentReportGeneratedGrade[]
+  internalEvaluations               InternalEvaluation[]
+  weighbridges                      Weighbridge[]
+  weighbridgeBatches                WeighbridgeBatch[]
+  batches                           Batch[]
+  prefixes                          Prefix[]
+  samples                           Sample[]
+  subSamples                        SubSample[]
+  workOrders                        WorkOrder[]
+  workOrderAttachments              WorkOrderAttachment[]
+  workOrderComments                 WorkOrderComment[]
+  bottleRollers                     BottleRoller[]
+  bottleRollerGroups                BottleRollerGroup[]
+  millingReceipts                   MillingReceipt[]
+  crushingLoads                     CrushingLoad[]
+  syncRuns                          SyncRun[]
+  allocations                       Allocation[]
+  allocationStockpiles              AllocationStockpile[]
+  allocationStockpileLoads          AllocationStockpileLoad[]
+  allocationStockpileBatches        AllocationStockpileBatch[]
+  allocationStockpileBatchLoads     AllocationStockpileBatchLoad[]
+  allocationWeighbridges            AllocationWeighbridge[]
+  stockpileAllocationEvents         StockpileAllocationEvent[]
+  @@index([name])
+}
+
+model Telematics {
+  id                  String    @id @default(cuid())
+  siteId              String?
+  site                Site?     @relation(fields: [siteId], references: [id])
+  equipment           Equipment @relation(fields: [equipmentId], references: [id])
+  equipmentId         String    @unique
+  telematicsId        String // TSC vehicle ID
+  currentLocation     String? // Could be stored as coordinates or address
+  fuelLevel           Float?
+  kilometresTravelled Float     @default(0)
+  tonsRelocated       Float?
+  lastUpdated         DateTime  @default(now())
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  @@unique([siteId, equipmentId])
+  @@unique([siteId, telematicsId])
+}
+
+model User {
+  id                              String                     @id @default(cuid())
+  siteId                          String?
+  site                            Site?                      @relation(fields: [siteId], references: [id])
+  email                           String
+  firstName                       String                     @db.Citext
+  lastName                        String                     @db.Citext
+  middleName                      String?
+  idNumber                        String?
+  contactNumber                   String?
+  whatsapp                        String?
+  address                         String?
+  password                        String?
+  passwordSetupToken              String?
+  passwordSetupExpires            DateTime?
+  authCode                        String?
+  authCodeExpires                 DateTime?
+  roleId                          String?
+  userRole                        UserRole?                  @relation(fields: [roleId], references: [id])
+  sessions                        Session[]
+  createdAt                       DateTime                   @default(now())
+  updatedAt                       DateTime                   @updatedAt
+  // assignedJobs                    Job[]                      @relation("JobToDriver") Remove these fields if we don't need them
+  requestedJobs                   Job[]                      @relation("Requester")
+  jobComments                     JobComment[]
+  executions                      Execution[]
+  clients                         Client[]
+  workOrderComments               WorkOrderComment[]
+  status                          UserStatus                 @default(ACTIVE)
+  gradedSamples                   SubSample[]                @relation("SubSampleGrader")
+  createdBatches                  Batch[]                    @relation("BatchCreator")
+  samples                         Sample[]                   @relation("SampleAgent")
+  weighbridges                    Weighbridge[]
+  onTheGround                     OnTheGround[]
+  paymentReports                  PaymentReport[]            @relation("PaymentReportCreator")
+  millingReceiptsCreated          MillingReceipt[]           @relation("MillingReceiptCreator")
+  createdTransportPricing         TransportPricing[]         @relation("TransportPricingCreator")
+  updatedTransportPricing         TransportPricing[]         @relation("TransportPricingUpdater")
+  createdGradePricing             GradePricing[]             @relation("GradePricingCreator")
+  updatedGradePricing             GradePricing[]             @relation("GradePricingUpdater")
+  createdFreeTransport            FreeTransport[]            @relation("FreeTransportCreator")
+  updatedFreeTransport            FreeTransport[]            @relation("FreeTransportUpdater")
+  createdAreaTransport            AreaTransportCosts[]       @relation("AreaTransportCreator")
+  updatedAreaTransport            AreaTransportCosts[]       @relation("AreaTransportUpdater")
+  createdSiteExtractionEfficiency SiteExtractionEfficiency[] @relation("SiteExtractionEfficiencyCreator")
+  updatedSiteExtractionEfficiency SiteExtractionEfficiency[] @relation("SiteExtractionEfficiencyUpdater")
+  createdAreaRoyaltyConfiguration AreaRoyaltyConfiguration[] @relation("AreaRoyaltyConfigurationCreator")
+  updatedAreaRoyaltyConfiguration AreaRoyaltyConfiguration[] @relation("AreaRoyaltyConfigurationUpdater")
+  supervisorApproval              PaymentReport[]            @relation("SupervisorApproval")
+  supervisorRejected              PaymentReport[]            @relation("SupervisorRejection")
+  paymentMarked                   PaymentReport[]            @relation("PaymentMarkedBy")
+  resampledReports                PaymentReport[]            @relation("ResampledBy")
+  stockpilesCreated               Stockpile[]                @relation("StockpileCreatedBy")
+  stockpilesAllocated             Stockpile[]                @relation("StockpileAllocatedBy")
+  stockpileLoadsAdded             StockpileLoad[]            @relation("StockpileLoadAddedBy")
+  stockpileAllocationEvents       StockpileAllocationEvent[] @relation("StockpileAllocationEventAllocatedBy")
+  allocationsAllocated             Allocation[]               @relation("AllocationAllocatedBy")
+  allocationsFinalized             Allocation[]               @relation("AllocationFinalizedBy")
+  allocationStockpilesAdded        AllocationStockpile[]      @relation("AllocationStockpileAddedBy")
+  allocationWeighbridgesAdded      AllocationWeighbridge[]    @relation("AllocationWeighbridgeAddedBy")
+  allocationStockpileBatchesAdded  AllocationStockpileBatch[] @relation("AllocationStockpileBatchAddedBy")
+
+  @@unique([firstName, lastName])
+  @@unique([siteId, email])
+  @@unique([siteId, passwordSetupToken])
+}
+
+model UserRole {
+  id          String   @id @default(cuid())
+  siteId      String?
+  site        Site?    @relation(fields: [siteId], references: [id])
+  name        String   @db.Citext
+  description String?
+  isSystem    Boolean  @default(false) // System roles cannot be deleted
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  rolePermissions UserPermission[]
+  users           User[]
+
+  @@unique([siteId, name])
+  @@index([name])
+  @@index([isActive])
+}
+
+model UserPermission {
+  id        String    @id @default(cuid())
+  siteId    String?
+  site      Site?     @relation(fields: [siteId], references: [id])
+  roleId    String // Reference to UserRole instead of enum
+  role      UserRole  @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  resource  Resource? // Resource enum for granular control
+  action    Action? // Action enum for granular control
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([roleId])
+  @@index([resource, action])
+}
+
+enum Resource {
+  // Systems Management Section
+  CONFIGURATION
+  USER
+  CLIENT
+  AUDIT_LOG
+  ROLE
+
+  // Mining Management Section
+  CLUSTER
+  SUB_AREA
+  SHAFT
+  LOADBAY
+  SYNDICATE
+  PREFIX_MANAGEMENT
+
+  // Equipment Management Section
+  EQUIPMENT
+  EQUIPMENT_COMPANY
+  WEIGHBRIDGE
+
+  // Ground Operations Section
+  ON_THE_GROUND
+  ON_THE_GROUND_TEST_RESULT
+
+  // Labs Section
+  SAMPLE_RECEIVING
+  SAMPLE_MANAGEMENT
+  SAMPLE_RECEIVING_LOAD_DETAILS
+  SAMPLE_MANAGEMENT_LOAD_DETAILS
+  BOTTLE_REGISTRATION
+  BOTTLE_ROLLER_MANAGEMENT
+  GRADING
+  GRADING_REVIEW
+  // -------------------- 
+
+  // Payment Management Section
+  INTERNAL_EVALUATION
+  PAYMENT_REPORT
+  PAYMENT_REPORT_GENERATION
+  PAYMENT_REPORT_REVIEW
+  PAYMENT_REPORT_PAID
+  STOCK_VALUE_WEIGHBRIDGE
+  STOCK_VALUE_ON_THE_GROUND
+  STOCK_VALUE_SAMPLE
+  STOCK_VALUE_PAYMENT_REPORT
+  STOCK_VALUE_ALLOCATION
+  STOCKPILES
+  ALLOCATIONS
+  ALLOCATION_HISTORY
+  BUDGET_REPORT
+
+  // Milling
+  SEPARATOR_MILLING
+  MILL_PLANNING
+  CRUSHING_PLANNING
+
+  // Transport Section
+  JOB
+  PLAN
+}
+
+enum Action {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  APPROVE
+  EXPORT_PDF
+  EDIT_LOAD_CODE
+  RECALL
+  MAKE_PAYABLE
+}
+
+model Equipment {
+  id                            String               @id @default(cuid())
+  siteId                        String?
+  site                          Site?                @relation(fields: [siteId], references: [id])
+  description                   String?
+  type                          EquipmentType?
+  fleetId                       String?              @db.Citext
+  make                          String?
+  model                         String?
+  year                          Int?
+  registrationNumber            String?              @db.Citext
+  vinSerialId                   String?
+  engineCapacity                String?
+  fuelConsumption               Float?
+  fuelConsumptionUnit           FuelConsumptionUnit?
+  loadingCarryingCapacityTonnes Float?
+  company                       EquipmentCompany?    @relation(fields: [companyId], references: [id])
+  companyId                     String?
+  location                      EquipmentLocation?
+  locationOtherText             String?
+  status                        EquipmentStatus      @default(AVAILABLE)
+  telematics                    Telematics?
+  maintenanceRecords            Maintenance[]
+  createdAt                     DateTime             @default(now())
+  updatedAt                     DateTime             @updatedAt
+  assignedWorkOrders            WorkOrder[]          @relation("WorkOrderEquipment")
+  weighbridges                  Weighbridge[]
+  planAssignments               PlanAssignment[]
+  millingSite                   MillingSite?         @relation(fields: [millingSiteId], references: [id])
+  millingSiteId                 String?
+  crushingSite                  CrushingSite?        @relation(fields: [crushingSiteId], references: [id])
+  crushingSiteId                String?
+  lastAssessedAt                DateTime?
+  riskAssessments               RiskAssessment[]
+  crushingLoadsAsCrusher       CrushingLoad[]       @relation("CrushingLoadCrusher")
+
+  @@unique([siteId, fleetId])
+  @@unique([siteId, registrationNumber])
+  @@unique([siteId, vinSerialId])
+  @@index([registrationNumber])
+  @@index([make, model])
+  @@index([crushingSiteId])
+}
+
+model MillingSite {
+  id        String      @id @default(cuid())
+  siteId    String
+  name      String      @db.Citext
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  equipment Equipment[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+model CrushingSite {
+  id        String      @id @default(cuid())
+  siteId    String
+  name      String      @db.Citext
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  equipment Equipment[]
+
+  @@unique([siteId, name])
+  @@index([name])
+}
+
+enum EquipmentLocation {
+  AMATOLA
+  WALDEN
+  OTHER
+}
+
+enum EquipmentType {
+  BUS
+  COMPACTOR
+  CRUSHER
+  DOZER
+  EXCAVATOR
+  FORKLIFT
+  FUEL_BOWSER
+  FUEL_TANKER
+  GENERATOR
+  GRADER
+  LOADER
+  MILL
+  MOTORBIKE
+  OTHER
+  POOL
+  TIPPER
+  TLB
+  TRACTOR
+  WATER_BOWSER
+  WATER_TANKER
+}
+
+enum FuelConsumptionUnit {
+  LITRES_PER_KM
+  LITRES_PER_HOUR
+}
+
+enum NatureOfBusiness {
+  TRANSPORTING
+  TRUCKING
+}
+
+model EquipmentCompany {
+  id                       String                             @id @default(cuid())
+  siteId                   String?
+  site                     Site?                              @relation(fields: [siteId], references: [id])
+  name                     String                             @db.Citext
+  companyType              CompanyType?
+  businessType             BusinessType?
+  businessTypeOther        String?
+  yearEstablished          Int?
+  natureOfBusiness         NatureOfBusiness?
+  tradingAs                String?
+  registrationNumber       String?
+  vatBpnRegistrationNumber String?
+  tel                      String?
+  contactName              String?
+  email                    String?
+  website                  String?
+  physicalAddress          String?
+  equipment                Equipment[]
+  members                  EquipmentCompanyMember[]
+  seniorManagement         EquipmentCompanySeniorManagement[]
+  transporters             EquipmentCompanyTransporter[]
+  bankingDetails           EquipmentCompanyBankingDetail[]
+  references               EquipmentCompanyReference[]
+  createdAt                DateTime                           @default(now())
+  updatedAt                DateTime                           @updatedAt
+
+  @@unique([siteId, name])
+}
+
+model EquipmentCompanyReference {
+  id                 String           @id @default(cuid())
+  siteId             String?
+  site               Site?            @relation(fields: [siteId], references: [id])
+  equipmentCompanyId String
+  equipmentCompany   EquipmentCompany @relation(fields: [equipmentCompanyId], references: [id], onDelete: Cascade)
+  name               String
+  physicalAddress    String?
+  contactPerson      String?
+  email              String?
+  tel                String?
+  description        String?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  @@index([siteId])
+  @@index([equipmentCompanyId])
+}
+
+model EquipmentCompanyMember {
+  id                 String           @id @default(cuid())
+  siteId             String?
+  site               Site?            @relation(fields: [siteId], references: [id])
+  equipmentCompanyId String
+  equipmentCompany   EquipmentCompany @relation(fields: [equipmentCompanyId], references: [id], onDelete: Cascade)
+  name               String
+  idNumber           String?
+  equity             Float? // percentage 0-100
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  @@index([siteId])
+  @@index([equipmentCompanyId])
+}
+
+model EquipmentCompanySeniorManagement {
+  id                 String           @id @default(cuid())
+  siteId             String?
+  site               Site?            @relation(fields: [siteId], references: [id])
+  equipmentCompanyId String
+  equipmentCompany   EquipmentCompany @relation(fields: [equipmentCompanyId], references: [id], onDelete: Cascade)
+  name               String
+  position           String?
+  idNumber           String?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  @@index([siteId])
+  @@index([equipmentCompanyId])
+}
+
+model EquipmentCompanyTransporter {
+  id                 String           @id @default(cuid())
+  siteId             String?
+  site               Site?            @relation(fields: [siteId], references: [id])
+  equipmentCompanyId String
+  equipmentCompany   EquipmentCompany @relation(fields: [equipmentCompanyId], references: [id], onDelete: Cascade)
+  capacity           Float? // capacity in tonnes
+  numberOfTrucks     Int?
+  proposedRates      String?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  @@index([siteId])
+  @@index([equipmentCompanyId])
+}
+
+model EquipmentCompanyBankingDetail {
+  id                 String           @id @default(cuid())
+  siteId             String?
+  site               Site?            @relation(fields: [siteId], references: [id])
+  equipmentCompanyId String
+  equipmentCompany   EquipmentCompany @relation(fields: [equipmentCompanyId], references: [id], onDelete: Cascade)
+  optionNumber       Int? // 1, 2, 3 etc
+  bankName           String?
+  branch             String?
+  currency           String?
+  accountNumber      String?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  @@index([siteId])
+  @@index([equipmentCompanyId])
+}
+
+enum BusinessType {
+  CORPORATE_LIMITED
+  PARTNERSHIP
+  OTHER
+}
+
+enum CompanyType {
+  INTERNAL
+  EXTERNAL
+}
+
+model VerificationCode {
+  id        String   @id @default(cuid())
+  siteId    String?
+  site      Site?    @relation(fields: [siteId], references: [id])
+  email     String
+  code      String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  type      String?  @default("OTP")
+}
+
+enum AnswerType {
+  TEXT
+  BOOLEAN
+  CHOICE
+  FILE_UPLOAD
+}
+
+enum ExecutionStatus {
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum JobPriority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum JobStatus {
+  PENDING
+  PLANNED
+  BLOCKED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum JobType {
+  COLLECT_INTERNAL_SANDS
+  COLLECT_EXTERNAL_SANDS
+  COLLECT_INTERNAL_ORES
+  COLLECT_EXTERNAL_ORES
+  EXTERNAL_SANDS_COLLECTION
+  EXTERNAL_ORES_COLLECTION
+  INTERNAL_SANDS_TRANSFER_NMS
+  INTERNAL_SANDS_TRANSFER_VLC
+  INTERNAL_ORES_TRANSFER
+  INTERNAL_SANDS_MOVEMENT_REJECTED_LOADS
+  INTERNAL_ORES_MOVEMENT_REJECTED_LOADS
+  BACKFILLING_SHAFTS
+  OFFLOADING_SUMPS
+  ROAD_MAINTENANCE
+  LOADING_NEW_MILLING_SITE_SANDS
+  LOADING_ORES_ON_TIPPER_TRUCKS
+  LOADING_ORES_ON_TRACTORS
+  LOADING_SANDS_ON_TIPPER_TRUCKS
+  LOADING_SANDS_ON_TRACTORS
+  GRAVEL_SUPPLY
+  LOADING_GRAVEL
+  DIGGING_GRAVEL
+  DUST_SUPPRESSION
+  STOCKPILING_SANDS
+  STOCKPILING_ORES
+  BACKFILLING_TRENCHES
+  TRENCHING
+  GROUND_SCOOPING
+  OFFLOADING_ORES
+  PITSAND_SUPPLY
+  QUARRY_STONE_SUPPLY
+  RIVERSAND_SUPPLY
+  BRICKS_SUPPLY
+  WATER_SUPPLY
+  ORES_RETURNED_LOAD
+  SANDS_RETURNED_LOAD
+  NO_LOAD_COLLECTED
+  SHAFT_REHABILITATION
+  RUBBLE_SUPPLY_FOR_SHAFT_REHABILITATION
+  REMOVING_GABBAGES
+  REMOVING_EMPTY_LIME_BAGS
+  INTERNAL_SANDS_TRANSFER
+  TRANSPORTING_FUEL
+  LIFTING_GENERATOR
+  LANDSCAPING
+  PUSHING_ORES
+  ORES_REMOVAL
+  TRAVELLING
+  FEEDING_BALL_MILLS
+  FEEDING_ROUND_MILLS
+  OPENING_NEW_SHAFT
+  BAY_CLEARANCE
+  LOADING_SUMPS
+  LIFTING_PUMP
+  LOADING_REJECTED_LOADS
+  OFFLOADING_FUEL_PUMP
+  OFFLOADING_DIESEL_TANK
+  LIFTING_DIESEL_TANK
+  LOADING_ORES_AT_WALDEN_CRUSHING
+  DIGGING_FOUNDATION_FOR_BALL_MILLS
+  LIFTING_BALL_MILLS_WHEEL
+  ROAD_SCRAPING
+  CARRYING_ELECTRICAL_MOTOR
+  HOUSEKEEPING
+  ORES_SHUNTING
+  DIGGING_ORES
+  LOADING_SAMPLES
+  GROUND_LEVELLING
+  BACKFILLING_USING_GRAVEL
+  JUMPSTARTING_GENERATOR
+  FIT_IN_ROUNDMILL_SHELL
+  TRUCK_RESCUE
+  REMOVING_JUNK_FROM_THE_SHAFT
+  LIFTING_AND_OFFLOADING_CAGES
+  LOADING_PEROXIDE
+  LIFTING_TRANSFORMER
+  OFFLOADING_MILL_WHEELS
+  LIFTING_ROUND_MILLS_WHEELS
+  BREAKDOWN
+  DIGGING_AND_LOADING_DUMP
+  INTERNAL_SANDS_TRANSFER_BMOS
+  DAM_CONSTRUCTION
+  LIFTING_CRUSHERS
+  LOADING_SAMPLE_BAGS
+  TRANSPORTING_AND_INSTALLING_ROUND_MILLS_WHEELS_AND_BASE
+  TRANSPORTING_AND_INSTALLING_CRUSHER
+  EXCAVATION_ON_THE_PIPE_LINE
+  DIGGING_TRENCHES
+  RESCUING_LANDCRUISER
+}
+
+enum ProcedureType {
+  STANDARD
+  START_OF_DAY
+  END_OF_DAY
+  EXCEPTION
+}
+
+enum QuestionType {
+  TEXT
+  TEXT_AREA
+  BOOLEAN
+  RADIO
+  RADIO_GROUP
+  IMAGE_PICKER
+  SIGNATURE
+  DATE_PICKER
+  DATE_TIME_PICKER
+}
+
+enum SiteClassification {
+  GREEN
+  ORANGE
+  RED
+}
+
+enum EquipmentStatus {
+  AVAILABLE
+  IN_TRANSIT
+  IN_USE
+  IN_OPERATION
+  UNDER_MAINTENANCE
+  OUT_OF_SERVICE
+}
+
+enum ClientStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  siteId    String?
+  site      Site?    @relation(fields: [siteId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  fleets    Fleet[]
+}
+
+model Fleet {
+  id           String        @id @default(cuid())
+  siteId       String?
+  site         Site?         @relation(fields: [siteId], references: [id])
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  fleetId      String
+  oldeCode     String?
+  company      Company?      @relation(fields: [companyId], references: [id])
+  companyId    String?
+  weighbridges Weighbridge[]
+
+  @@unique([siteId, fleetId])
+}
+
+model OnTheGround {
+  id                     String                 @id @default(cuid())
+  siteId                 String?
+  site                   Site?                  @relation(fields: [siteId], references: [id])
+  createdAt              DateTime               @default(now())
+  updatedAt              DateTime               @updatedAt
+  waterTest              Float? // User input // Grams
+  dryTest                Float? // User input // Grams
+  grindTest              Float? // User input // Grams
+  loadCleanliness        Int? // User input
+  debrisTest             Float? // User input // Grams
+  dryFactor              Float? // dryTest / waterTest
+  dryTonnage             Float? // wetTonnage * dryFactor // Tons
+  debrisFactor           Float? // (dryTest - debrisTest) / dryTest
+  debrisTonnage          Float? // dryTonnage * debrisFactor // Tons
+  cleanTonnage           Float? // dryTonnage - debrisTonnage // Tons
+  groundProcessingStatus GroundProcessingStatus @default(AWAITING_TEST)
+  groundProcessingDate   DateTime
+  weighbridge            Weighbridge            @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId          String                 @unique
+  processedBy            User?                  @relation(fields: [processedById], references: [id])
+  processedById          String?
+  sandOreType            SandOreType?
+  // Client -> Get from weighbridge
+  // Product Type -> Get from weighbridge
+  // WetTonnage -> Get from weighbridge -> tonnage
+}
+
+enum SandOreType {
+  D_O
+  F_O
+  F_S
+  H_M
+  H_M_MIX
+  M_O
+  O_D_MIX
+  MIX
+  N_M
+  NONE
+  O_D
+  O_S
+  S_M
+}
+
+enum GroundProcessingStatus {
+  AWAITING_TEST
+  IN_PROGRESS
+  COMPLETE
+}
+
+model AreaTransportCosts {
+  id            String   @id @default(cuid())
+  siteId        String?
+  site          Site?    @relation(fields: [siteId], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  area          SubArea  @relation(fields: [areaId], references: [id])
+  areaId        String
+  areaName      String
+  transportCost Float
+  createdBy     User?    @relation("AreaTransportCreator", fields: [createdById], references: [id])
+  createdById   String?
+  updatedBy     User?    @relation("AreaTransportUpdater", fields: [updatedById], references: [id])
+  updatedById   String?
+}
+
+model FreeTransport {
+  id          String   @id @default(cuid())
+  siteId      String?
+  site        Site?    @relation(fields: [siteId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  client      Client   @relation(fields: [clientId], references: [id])
+  clientId    String
+  clientName  String
+  createdBy   User     @relation("FreeTransportCreator", fields: [createdById], references: [id])
+  createdById String
+  updatedBy   User     @relation("FreeTransportUpdater", fields: [updatedById], references: [id])
+  updatedById String
+}
+
+model GradePricing {
+  id          String   @id @default(cuid())
+  siteId      String?
+  site        Site?    @relation(fields: [siteId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  grade       Float
+  worldPrice  Float
+  percentage  Float
+  pricePerTon Float
+  createdBy   User     @relation("GradePricingCreator", fields: [createdById], references: [id])
+  createdById String
+  updatedBy   User     @relation("GradePricingUpdater", fields: [updatedById], references: [id])
+  updatedById String
+}
+
+model TransportPricing {
+  id          String   @id @default(cuid())
+  siteId      String?
+  site        Site?    @relation(fields: [siteId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  startKm     Float
+  endKm       Float
+  costPerKm   Float
+  createdBy   User     @relation("TransportPricingCreator", fields: [createdById], references: [id])
+  createdById String
+  updatedBy   User     @relation("TransportPricingUpdater", fields: [updatedById], references: [id])
+  updatedById String
+}
+
+model SiteExtractionEfficiency {
+  id                   String   @id @default(cuid())
+  siteId               String
+  site                 Site     @relation(fields: [siteId], references: [id])
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  siteName             String
+  extractionEfficiency Float
+  effectiveDate        DateTime
+  createdBy            User     @relation("SiteExtractionEfficiencyCreator", fields: [createdById], references: [id])
+  createdById          String
+  updatedBy            User     @relation("SiteExtractionEfficiencyUpdater", fields: [updatedById], references: [id])
+  updatedById          String
+}
+
+model AreaRoyaltyConfiguration {
+  id                String   @id @default(cuid())
+  siteId            String?
+  site              Site?    @relation(fields: [siteId], references: [id])
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  area              SubArea  @relation(fields: [areaId], references: [id])
+  areaId            String
+  areaName          String
+  royaltyPercentage Float
+  calculationBasis  String // "tonnage" or "load_value"
+  createdBy         User     @relation("AreaRoyaltyConfigurationCreator", fields: [createdById], references: [id])
+  createdById       String
+  updatedBy         User     @relation("AreaRoyaltyConfigurationUpdater", fields: [updatedById], references: [id])
+  updatedById       String
+}
+
+model ManualDeduction {
+  id                         String                   @id @default(cuid())
+  siteId                     String?
+  site                       Site?                    @relation(fields: [siteId], references: [id])
+  createdAt                  DateTime                 @default(now())
+  updatedAt                  DateTime                 @updatedAt
+  amount                     Float
+  description                String
+  paymentReportCalculation   PaymentReportCalculation @relation(fields: [paymentReportCalculationId], references: [id])
+  paymentReportCalculationId String
+}
+
+model StockValue {
+  id                   String                @id @default(cuid())
+  siteId               String?
+  site                 Site?                 @relation(fields: [siteId], references: [id])
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  stockValue           Weighbridge?
+  stockStatus          StockStatus           @default(AVAILABLE)
+  stockStartDate       DateTime
+  stockEndDate         DateTime?
+  evaluated            Float? // paidAverageGrade * cleanTonnage
+  sustainabilityStatus SustainabilityStatus?
+}
+
+enum StockpileStatus {
+  AVAILABLE
+  EMPTY
+}
+
+model Stockpile {
+  id              String          @id @default(cuid())
+  siteId          String?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  name            String          @db.Citext
+  description     String?
+  status          StockpileStatus @default(AVAILABLE)
+
+  createdById     String?
+  createdBy       User?           @relation("StockpileCreatedBy", fields: [createdById], references: [id])
+
+  allocatedAt     DateTime?
+  allocatedById   String?
+  allocatedBy     User?           @relation("StockpileAllocatedBy", fields: [allocatedById], references: [id])
+
+  allocationId    String?
+  allocation      Allocation?     @relation(fields: [allocationId], references: [id])
+
+  // Snapshot fields for “0 loads (was X)” once emptied/allocated
+  wasLoadCount       Int?
+  wasTotalTonnage    Float?
+  wasWeightedGrade   Float?
+  wasEvaluatedAmount Float?
+
+  loads           StockpileLoad[]
+  allocationEvents StockpileAllocationEvent[]
+  allocationStockpiles AllocationStockpile[]
+  allocationStockpileLoads AllocationStockpileLoad[]
+  allocationStockpileBatches AllocationStockpileBatch[]
+
+
+  @@unique([siteId, name])
+  @@index([siteId, status])
+  @@index([siteId, createdAt])
+  @@index([allocationId])
+}
+
+model StockpileLoad {
+  id           String     @id @default(cuid())
+  siteId       String?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  stockpileId  String
+  stockpile    Stockpile  @relation(fields: [stockpileId], references: [id], onDelete: Cascade)
+  weighbridgeId String
+  weighbridge   Weighbridge @relation(fields: [weighbridgeId], references: [id])
+  addedAt      DateTime   @default(now())
+  addedById    String?
+  addedBy      User?      @relation("StockpileLoadAddedBy", fields: [addedById], references: [id])
+  removedAt    DateTime?
+
+  // A load can belong to only one stockpile ever
+  @@unique([weighbridgeId])
+  @@index([stockpileId, removedAt])
+}
+
+model StockpileAllocationEvent {
+  id            String    @id @default(cuid())
+  siteId        String?
+  site          Site?     @relation(fields: [siteId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  stockpileId   String
+  stockpile     Stockpile @relation(fields: [stockpileId], references: [id], onDelete: Cascade)
+
+  allocationId  String
+  allocation    Allocation @relation(fields: [allocationId], references: [id], onDelete: Cascade)
+
+  allocatedAt   DateTime
+  allocatedById String?
+  allocatedBy   User?     @relation("StockpileAllocationEventAllocatedBy", fields: [allocatedById], references: [id])
+
+  note          String?
+
+  @@index([stockpileId, allocatedAt])
+  @@index([allocationId])
+}
+
+
+
+enum SustainabilityStatus {
+  SUSTAINABLE
+  UNSUSTAINABLE
+}
+
+enum StockStatus {
+  AVAILABLE
+  ALLOCATED
+  PROCESSED
+  REJECTED
+  STOCKPILED
+  NONE
+  MILLED
+  EVALUATED
+  NOT_EVALUATED
+  WEIGHBRIDGE_ONLY
+  GRADING_OUTSTANDING
+  AWAITING_PAYMENT
+  RESAMPLING
+}
+
+model PaymentReport {
+  id                      String              @id @default(cuid())
+  siteId                  String?
+  site                    Site?               @relation(fields: [siteId], references: [id])
+  createdAt               DateTime            @default(now())
+  updatedAt               DateTime            @updatedAt
+  weighbridges            Weighbridge[]
+  loanPercentage          Float? // User can enter a percentage amount that will be used to calculate the loan amount
+  transportCostPercentage Float? // User can enter a percentage amount that will be used to calculate the transport cost
+  status                  PaymentReportStatus @default(DRAFT) // If Supervisor rejects the report the status will be set to DRAFT so that the report can be fixed. SupervisorRejectedAt and SupervisorRejectedById will be set.
+  client                  Client              @relation(fields: [clientId], references: [id])
+  clientId                String
+  createdBy               User                @relation(fields: [createdById], references: [id], name: "PaymentReportCreator")
+  createdById             String
+  /** Once true (set on recall), generated payment PDF uploads include a recall marker in the filename until cleared (never cleared automatically). */
+  pdfFileNameIncludeRecall Boolean               @default(false)
+  pdfs                     Report[]
+  generateReport          Boolean             @default(true)
+  supervisorApproval      Boolean             @default(true)
+  supervisorApprovedBy    User?               @relation(fields: [supervisorApprovedById], references: [id], name: "SupervisorApproval")
+  supervisorApprovedById  String?
+  supervisorApprovedAt    DateTime?
+  evaluationDate          DateTime?
+  supervisorRejectedAt    DateTime?
+  supervisorRejectedBy    User?               @relation(fields: [supervisorRejectedById], references: [id], name: "SupervisorRejection")
+  supervisorRejectedById  String?
+  paymentDate             DateTime?
+  paymentMarkedBy         User?               @relation(fields: [paymentMarkedById], references: [id], name: "PaymentMarkedBy")
+  paymentMarkedById       String?
+  /** UI: mill charge row uses % of per-load gross vs fixed $. */
+  millChargeEntryIsPercent      Boolean @default(false)
+  /** UI: actual loan deductions row uses % vs $. */
+  loanDeductionsEntryIsPercent   Boolean @default(false)
+  /** UI: flat-fee transport row uses % vs $. */
+  transportChargeEntryIsPercent Boolean @default(false)
+  /** UI: parallel array to manual deduction rows (by description order) — each is % vs $. */
+  manualDeductionEntryModes     Json?
+  /** Not-payable internal batches: grade-only workflow; supervisor approves to APPROVED (not PAID). */
+  internalEvaluationOnly        Boolean             @default(false)
+  isResampled                   Boolean             @default(false)
+  resampledAt                   DateTime?
+  resampledById                 String?
+  resampledBy                   User?               @relation("ResampledBy", fields: [resampledById], references: [id])
+}
+
+model Report {
+  id              String        @id @default(cuid())
+  siteId          String?
+  site            Site?         @relation(fields: [siteId], references: [id])
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  url             String
+  version         Int
+  paymentReport   PaymentReport @relation(fields: [paymentReportId], references: [id])
+  paymentReportId String
+}
+
+enum PaymentReportStatus {
+  DRAFT
+  HAS_OUTSTANDING_LOADS
+  REQUIRES_SUPERVISOR_APPROVAL
+  FINALIZED
+  REJECTED
+  PAID
+  RECALLED
+  APPROVED
+}
+
+model BudgetReport {
+  id                      String             @id @default(cuid())
+  siteId                  String
+  site                    Site               @relation(fields: [siteId], references: [id])
+  createdAt               DateTime           @default(now())
+  updatedAt               DateTime           @updatedAt
+  sessionDate             DateTime // SAST calendar day start (stored as instant); payment date for this session (not generation date)
+  sessionType             BudgetSessionType
+  materialType            BudgetMaterialType
+  totalTonnage            Float // Sum of clean tonnage across all loads
+  totalAverageGrade       Float // Weighted average grade across all loads
+  totalTheoreticalPayment Float // Sum of theoretical payments (without buffer)
+  totalBudgetedAmount     Float // Sum of theoretical + 20% buffers
+  bufferPercentage        Float              @default(0.2) // Default 20% buffer
+  status                  BudgetReportStatus @default(GENERATED)
+  generatedAt             DateTime // Actual time the job ran (10:00 or 15:00)
+  notes                   String? // System notes or error messages
+  loads                   BudgetReportLoad[]
+  pdfUrl                  String
+
+  @@unique([siteId, sessionDate, sessionType])
+}
+
+model BudgetReportLoad {
+  id                 String            @id @default(cuid())
+  siteId             String?
+  site               Site?             @relation(fields: [siteId], references: [id])
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  budgetReport       BudgetReport      @relation(fields: [budgetReportId], references: [id], onDelete: Cascade)
+  budgetReportId     String
+  weighbridge        Weighbridge       @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId      String
+  gradeSource        BudgetGradeSource // Source of the grade (actual samples, historical, or none)
+  pricePerGram       Float? // Snapshot from GradePricing at time of budget
+  theoreticalPayment Float // cleanTonnage × averageGrade × pricePerGram
+  bufferPercentage   Float             @default(0.2) // Per-load buffer percentage
+  bufferAmount       Float // theoreticalPayment × bufferPercentage
+  budgetedAmount     Float // theoreticalPayment + bufferAmount
+  hasLabSamples      Boolean           @default(false)
+  hasHistoricalData  Boolean           @default(false)
+  flagManualReview   Boolean           @default(false) // True when no grade available
+
+  @@index([budgetReportId])
+}
+
+enum BudgetSessionType {
+  AM_SESSION
+  PM_SESSION
+}
+
+enum BudgetReportStatus {
+  GENERATED
+  FAILED
+}
+
+enum BudgetGradeSource {
+  ACTUAL_SAMPLES
+  HISTORICAL_AVERAGE
+  AREA_AVERAGE
+  DEFAULT_GRADE
+  NONE
+}
+
+enum BudgetMaterialType {
+  SANDS
+  ORES
+}
+
+model PaymentReportConfiguration {
+  id                        String                     @id @default(cuid())
+  siteId                    String?
+  site                      Site?                      @relation(fields: [siteId], references: [id])
+  createdAt                 DateTime                   @default(now())
+  updatedAt                 DateTime                   @updatedAt
+  paymentType               PaymentType                @default(STANDARD)
+  transportMethod           TransportMethod?
+  model                     String?
+  pricePerGram              Float?
+  extractionEfficiency      Float?
+  costs                     Float?
+  customerProfitPercentage  Float?
+  ratePerTon                Float? // PRICE_PER_TON: gross = ratePerTon × cleanTonnage
+  ratePerGram               Float? // PRICE_PER_GRAM: gross = ratePerGram × (cleanTonnage in grams)
+  fixedAmount               Float? // FLAT_RATE: gross payment per load
+  paymentReportCalculations PaymentReportCalculation[]
+}
+
+enum PaymentType {
+  STANDARD
+  SPECIAL
+  PRICE_PER_TON
+  PRICE_PER_GRAM
+  FLAT_RATE
+}
+
+enum TransportMethod {
+  MILEAGE
+  AREA
+  NONE
+  FLAT_FEE_PERCENTAGE
+}
+
+model PaymentReportCalculation {
+  id                             String                         @id @default(cuid())
+  siteId                         String?
+  site                           Site?                          @relation(fields: [siteId], references: [id])
+  createdAt                      DateTime                       @default(now())
+  updatedAt                      DateTime                       @updatedAt
+  pricePerTon                    Float
+  grossPayment                   Float
+  transportCost                  Float?
+  status                         AutoGradeRecommendationStatus
+  standardDeviation              Float
+  coefficientOfVariation         Float?
+  historicalRange                Float
+  isStandardDeviationValid       Boolean                        @default(false)
+  isCoefficientOfVariationValid  Boolean                        @default(false)
+  isHistoricalRangeValid         Boolean                        @default(false)
+  paymentReportCalculationStatus PaymentReportCalculationStatus @default(NO_DELAY)
+  royalty                        Float
+  debrisCharge                   Float
+  transportRebate                Float?
+  millCharge                     Float                          @default(0)
+  actualLoanDeductions           Float                          @default(0)
+  rejected                       Boolean?                       @default(false)
+  rejectedReason                 String?
+  weighbridge                    Weighbridge                    @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId                  String                         @unique
+  paidAverageGrade               Float?
+  paymentReportConfiguration     PaymentReportConfiguration?    @relation(fields: [paymentReportConfigurationId], references: [id])
+  paymentReportConfigurationId   String?
+  selectedSubSamples             SubSample[]                    @relation("SelectedSubSamples")
+  PaymentReportGeneratedGrades   PaymentReportGeneratedGrade[]
+  manualDeductions               ManualDeduction[]
+}
+
+model PaymentReportGeneratedGrade {
+  id                         String                    @id @default(cuid())
+  siteId                     String?
+  site                       Site?                     @relation(fields: [siteId], references: [id])
+  createdAt                  DateTime                  @default(now())
+  updatedAt                  DateTime                  @updatedAt
+  generatedGrade             Float?
+  paymentReportCalculation   PaymentReportCalculation? @relation(fields: [paymentReportCalculationId], references: [id])
+  paymentReportCalculationId String?
+}
+
+model InternalEvaluation {
+  id                            String      @id @default(cuid())
+  siteId                        String?
+  site                          Site?       @relation(fields: [siteId], references: [id])
+  createdAt                     DateTime    @default(now())
+  updatedAt                     DateTime    @updatedAt
+  weighbridge                   Weighbridge @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId                 String      @unique
+  standardDeviation             Float
+  coefficientOfVariation        Float
+  historicalRange               Float
+  isStandardDeviationValid      Boolean
+  isCoefficientOfVariationValid Boolean
+  isHistoricalRangeValid        Boolean
+  paidAverageGrade              Float
+}
+
+enum AutoGradeRecommendationStatus {
+  REJECT
+  USE_AUTO_GRADE
+  RECOMMEND_RESAMPLING
+  USER_DISCRETION
+}
+
+enum PaymentReportCalculationStatus {
+  NO_DELAY
+  DELAYED
+  POSTPONED
+  RESAMPLE
+}
+
+enum WeighbridgeAuSource {
+  AM_SAMPLE
+  TOAST
+}
+
+model Weighbridge {
+  id                       String                    @id @default(cuid())
+  siteId                   String?
+  site                     Site?                     @relation(fields: [siteId], references: [id])
+  createdAt                DateTime                  @default(now())
+  updatedAt                DateTime                  @updatedAt
+  firstWeighTime           DateTime?
+  secondWeighTime          DateTime?
+  type                     WeighbridgeType
+  client                   Client                    @relation(fields: [clientId], references: [id])
+  clientId                 String
+  operationType            OperationType
+  fleet                    Fleet?                    @relation(fields: [fleetId], references: [id])
+  fleetId                  String?
+  area                     SubArea                   @relation(fields: [areaId], references: [id])
+  areaId                   String
+  shaftName                String? // When shafts enter the DB change back to relation
+  startKm                  Float?
+  endKm                    Float?
+  mileageKm                Float?
+  firstMass                Float? // Tons
+  secondMass               Float? // Tons
+  tonnage                  Float? // Tons
+  agent                    User?                     @relation(fields: [agentId], references: [id])
+  agentId                  String?
+  productType              ProductType
+  primer                   WeighbridgePrimer
+  prefix                   Prefix?                   @relation(fields: [prefixId], references: [id])
+  prefixId                 String?
+  loadCode                 String
+  batchNumber              String? // Mandatory for AFTER_MILL_SANDS product type
+  isCustomerVehicle        Boolean                   @default(false) // If no mileage is provided, it is a customer vehicle
+  status                   WeighbridgeStatus         @default(AWAITING_SECOND_WEIGH)
+  toastValue               Float? // After-milling: user-entered toast value (g/t); used for AU when no AM sample grade
+  calculatedAU             Float?
+  auSource                 WeighbridgeAuSource?
+  onTheGround              OnTheGround?
+  paymentReportCalculation PaymentReportCalculation?
+  paymentReport            PaymentReport?            @relation(fields: [paymentReportId], references: [id])
+  paymentReportId          String?
+  stockValue               StockValue?               @relation(fields: [stockValueId], references: [id])
+  stockValueId             String?                   @unique
+  loadbay                  Loadbay?                  @relation(fields: [loadbayId], references: [id])
+  loadbayId                String?
+  weighbridgeBatch         WeighbridgeBatch[]
+  budgetReportLoads        BudgetReportLoad[]
+  internalEvaluation       InternalEvaluation?
+  registrationNumber       String?
+  equipment                Equipment?                @relation(fields: [equipmentId], references: [id])
+  equipmentId              String?
+  job                      Job?                      @relation(fields: [jobId], references: [id])
+  jobId                    String?                   @unique
+  allocationStatus         AllocationStatus?         @default(AVAILABLE)
+  dateAllocated            DateTime?
+  allocationId             String?
+  allocation               Allocation?               @relation(fields: [allocationId], references: [id])
+  millingLoad              MillingLoad?
+  crushingLoad             CrushingLoad?
+  stockpileLoad            StockpileLoad?
+  allocationWeighbridges   AllocationWeighbridge[]
+  allocationStockpileLoads AllocationStockpileLoad[]
+  allocationStockpileBatchLoads AllocationStockpileBatchLoad[]
+}
+
+model Allocation {
+  id           String     @id @default(cuid())
+  siteId       String?
+  site         Site?      @relation(fields: [siteId], references: [id])
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  /** Bucket start instant for UI grouping (not unique). */
+  startsAt     DateTime
+  /** Bucket end instant for UI grouping (not unique). */
+  endsAt       DateTime
+
+  status       AllocationPlanStatus @default(DRAFT)
+  finalizedAt  DateTime?
+  finalizedById String?
+  finalizedBy  User?      @relation("AllocationFinalizedBy", fields: [finalizedById], references: [id])
+
+  totalLoadCount       Int      @default(0)
+  totalTonnage         Float    @default(0)
+  weightedGrade        Float?
+  totalEvaluatedAmount Float    @default(0)
+
+  /** When created/last modified (draft) for audit; set on finalize too. */
+  allocatedAt  DateTime
+  allocatedById String?
+  allocatedBy  User?      @relation("AllocationAllocatedBy", fields: [allocatedById], references: [id])
+
+  pdfUrl       String?
+  note         String?
+
+  weighbridges Weighbridge[]
+  stockpiles   Stockpile[]
+  stockpileAllocationEvents StockpileAllocationEvent[]
+  allocationStockpiles AllocationStockpile[]
+  allocationStockpileLoads AllocationStockpileLoad[]
+  allocationStockpileBatches AllocationStockpileBatch[]
+  allocationWeighbridges AllocationWeighbridge[]
+
+  @@unique([siteId, startsAt, endsAt])
+  @@index([siteId, startsAt])
+  @@index([siteId, startsAt, endsAt])
+  @@index([siteId, allocatedAt])
+}
+
+enum AllocationPlanStatus {
+  DRAFT
+  FINALIZED
+}
+
+model AllocationStockpile {
+  id           String    @id @default(cuid())
+  siteId       String?
+  site         Site?     @relation(fields: [siteId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  allocationId String
+  allocation   Allocation @relation(fields: [allocationId], references: [id], onDelete: Cascade)
+
+  stockpileId  String
+  stockpile    Stockpile  @relation(fields: [stockpileId], references: [id], onDelete: Cascade)
+
+  addedAt      DateTime  @default(now())
+  addedById    String?
+  addedBy      User?     @relation("AllocationStockpileAddedBy", fields: [addedById], references: [id])
+
+  removedAt    DateTime?
+
+  @@unique([allocationId, stockpileId])
+  @@index([allocationId, removedAt])
+}
+
+/**
+ * Snapshot of which loads (weighbridges) from a stockpile were allocated in a given allocation.
+ * This decouples allocation reports/totals from the live stockpile membership.
+ */
+model AllocationStockpileLoad {
+  id            String     @id @default(cuid())
+  siteId        String?
+  site          Site?      @relation(fields: [siteId], references: [id])
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  allocationId  String
+  allocation    Allocation @relation(fields: [allocationId], references: [id], onDelete: Cascade)
+
+  stockpileId   String
+  stockpile     Stockpile  @relation(fields: [stockpileId], references: [id], onDelete: Cascade)
+
+  weighbridgeId String
+  weighbridge   Weighbridge @relation(fields: [weighbridgeId], references: [id], onDelete: Cascade)
+
+  removedAt     DateTime?
+
+  @@unique([allocationId, stockpileId, weighbridgeId])
+  @@index([allocationId, removedAt])
+  @@index([stockpileId, removedAt])
+}
+
+model AllocationStockpileBatch {
+  id           String    @id @default(cuid())
+  siteId       String?
+  site         Site?     @relation(fields: [siteId], references: [id])
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  allocationId String
+  allocation   Allocation @relation(fields: [allocationId], references: [id], onDelete: Cascade)
+
+  stockpileId  String
+  stockpile    Stockpile  @relation(fields: [stockpileId], references: [id], onDelete: Cascade)
+
+  addedById    String?
+  addedBy      User?     @relation("AllocationStockpileBatchAddedBy", fields: [addedById], references: [id])
+
+  removedAt    DateTime?
+
+  loads        AllocationStockpileBatchLoad[]
+
+  @@index([allocationId, removedAt])
+  @@index([stockpileId, removedAt])
+}
+
+model AllocationStockpileBatchLoad {
+  id            String    @id @default(cuid())
+  siteId        String?
+  site          Site?     @relation(fields: [siteId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  batchId       String
+  batch         AllocationStockpileBatch @relation(fields: [batchId], references: [id], onDelete: Cascade)
+
+  weighbridgeId String
+  weighbridge   Weighbridge @relation(fields: [weighbridgeId], references: [id], onDelete: Cascade)
+
+  removedAt     DateTime?
+
+  @@unique([batchId, weighbridgeId])
+  @@index([batchId, removedAt])
+}
+
+/// Direct allocation of individual loads (not via a stockpile). Mirrors AllocationStockpile soft-remove.
+model AllocationWeighbridge {
+  id            String    @id @default(cuid())
+  siteId        String?
+  site          Site?     @relation(fields: [siteId], references: [id])
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  allocationId  String
+  allocation    Allocation @relation(fields: [allocationId], references: [id], onDelete: Cascade)
+
+  weighbridgeId String
+  weighbridge   Weighbridge @relation(fields: [weighbridgeId], references: [id], onDelete: Cascade)
+
+  addedAt       DateTime  @default(now())
+  addedById     String?
+  addedBy       User?     @relation("AllocationWeighbridgeAddedBy", fields: [addedById], references: [id])
+
+  removedAt     DateTime?
+
+  @@unique([allocationId, weighbridgeId])
+  @@index([allocationId, removedAt])
+}
+
+enum AllocationStatus {
+  AVAILABLE
+  ALLOCATED
+}
+
+enum WeighbridgeType {
+  EXTERNAL_SANDS
+  INTERNAL_SANDS
+  EXTERNAL_ORES_TO_CRUSH
+  INTERNAL_ORES_TO_CRUSH
+  ORE_TO_HAMMER_MILL
+  ORE_TO_BALL_MILL
+  ORE_TO_ROUND_MILL
+}
+
+enum WeighbridgeStatus {
+  AWAITING_SECOND_WEIGH
+  COMPLETED
+  INCOMPLETE
+}
+
+enum OperationType {
+  COLLECTION
+  DELIVERY
+}
+
+// Sample-prep includes NH for Not-Here samples where weighbridge will not have this
+enum WeighbridgePrimer {
+  ES
+  IS
+  EC
+  IC
+  HM
+  BM
+  RM
+  OD
+  ZB
+}
+
+enum ProductType {
+  AFTER_MILL_SANDS
+  DUMP
+  PARTNER_SANDS
+  MAIN_SHAFT
+  OTHER_ORES
+  OTHER_SANDS
+  PARTNER_ORES
+  PARTNER_MILLING
+}
+
+model WeighbridgeBatch {
+  id            String      @id @default(cuid())
+  siteId        String?
+  site          Site?       @relation(fields: [siteId], references: [id])
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  weighbridge   Weighbridge @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId String
+  batch         Batch       @relation(fields: [batchId], references: [id])
+  batchId       String
+
+  @@unique([weighbridgeId, batchId])
+}
+
+model Batch {
+  id               String             @id @default(cuid())
+  siteId           String?
+  site             Site?              @relation(fields: [siteId], references: [id])
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  dailyBatchNumber Int?
+  samples          Sample[]
+  createdBy        User               @relation("BatchCreator", fields: [createdById], references: [id])
+  createdById      String
+  shift            Shift?
+  weighbridgeBatch WeighbridgeBatch[]
+}
+
+enum Shift {
+  A
+  B
+  C
+}
+
+model Prefix {
+  id                   String        @id @default(cuid())
+  siteId               String?
+  site                 Site?         @relation(fields: [siteId], references: [id])
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+  samples              Sample[]
+  weighbridges         Weighbridge[]
+  code                 String        @db.Citext
+  type                 PrefixType
+  description          String?
+  status               PrefixStatus  @default(ACTIVE)
+  preferredProductType ProductType?
+
+  @@unique([siteId, code])
+}
+
+enum PrefixType {
+  INTERNAL
+  EXTERNAL
+}
+
+enum PrefixStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model Sample {
+  id                  String       @id @default(cuid())
+  siteId              String?
+  site                Site?        @relation(fields: [siteId], references: [id])
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+  batch               Batch?       @relation(fields: [batchId], references: [id])
+  batchId             String?
+  loadCode            String?
+  sampleTakenTime     DateTime?
+  sampleType          SampleType?
+  department          Department?
+  assayType           AssayType?
+  primer              Primer?
+  prefix              Prefix?      @relation(fields: [prefixId], references: [id])
+  prefixId            String?
+  subSamples          SubSample[]
+  status              SampleStatus @default(PENDING)
+  client              Client?      @relation(fields: [clientId], references: [id])
+  clientId            String?
+  area                SubArea?     @relation(fields: [areaId], references: [id])
+  areaId              String?
+  agent               User?        @relation("SampleAgent", fields: [agentId], references: [id])
+  agentId             String?
+  shaft               String?
+  weighbridgeIdLookup String?
+  comment             String?
+  sampleIdentifier    String?
+  shift               Shift?
+}
+
+model SubSample {
+  id                         String                    @id @default(cuid())
+  siteId                     String?
+  site                       Site?                     @relation(fields: [siteId], references: [id])
+  createdAt                  DateTime                  @default(now())
+  updatedAt                  DateTime                  @updatedAt
+  subSampleNumber            String
+  sample                     Sample                    @relation(fields: [sampleId], references: [id], onDelete: Cascade)
+  sampleId                   String
+  status                     SubSampleStatus           @default(PENDING)
+  rawGrading                 Float?
+  grading                    Float? // Grading is rawGrading multiplied by 2
+  gradedAt                   DateTime?
+  gradedBy                   User?                     @relation("SubSampleGrader", fields: [gradedById], references: [id])
+  gradedById                 String?
+  bottleRoller               String?
+  bottleId                   String?
+  bottleRollerGroup          BottleRollerGroup?        @relation(fields: [bottleRollerGroupId], references: [id])
+  bottleRollerGroupId        String?
+  timeInLab                  DateTime?
+  inRollerTime               DateTime?
+  outRollerTime              DateTime?
+  timeOutLab                 DateTime?
+  filtrationRackPosition     String?
+  gradingComment             String?
+  bottleRegistrationComment  String?
+  /// Optional roll batch label set at bottle registration or on-roller; used e.g. for sample-movement PDF batch column.
+  rollBatchNumber            String?
+  paymentReportCalculation   PaymentReportCalculation? @relation("SelectedSubSamples", fields: [paymentReportCalculationId], references: [id])
+  paymentReportCalculationId String?
+  isPrinted                  Boolean                   @default(false)
+}
+
+model BottleRoller {
+  id                 String              @id @default(cuid())
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  rollerNumber       String
+  site               Site?               @relation(fields: [siteId], references: [id])
+  siteId             String?
+  bottleRollerGroups BottleRollerGroup[]
+  status             BottleRollerStatus  @default(IDLE)
+}
+
+model BottleRollerGroup {
+  id             String       @id @default(cuid())
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  bottleRoller   BottleRoller @relation(fields: [bottleRollerId], references: [id])
+  bottleRollerId String
+  site           Site?        @relation(fields: [siteId], references: [id])
+  siteId         String?
+  subSamples     SubSample[]
+  startedAt      DateTime
+  maxTime        String
+  /// Roll batch label shared by every subsample in this group.
+  /// Active uniqueness per bottleRollerId is enforced in application code
+  /// (active = at least one subsample with outRollerTime IS NULL).
+  rollBatchNumber String?
+
+  @@index([bottleRollerId, rollBatchNumber])
+}
+
+enum BottleRollerStatus {
+  IDLE
+  RUNNING
+}
+
+enum SubSampleStatus {
+  PENDING
+  LAB_RECEIVED
+  COMPLETE // SubSample has been graded
+}
+
+enum Department {
+  CIP_SAMPLES
+  CRUSHER_SAMPLES
+  ELUTION
+  EXPLORATION_SUPPLY
+  GEOLOGY_SUPPLY
+  GROUND_TEAM_DATA
+  MAGAYA_MILLS
+  SANDS_NOT_HERE_TEAM_DATA
+  SLIMES_DAM_PROCESSING
+  BLUE_ROCK
+  GIANT
+  ZOWA
+  NOAHIC_MILLS
+  CHANTON_CIP
+  CHANTON_SUPPLY
+  CHANTON_ELUTION
+  GIANT_DUMP_SAMPLES_SUPPLY
+  ELIVINGTON_DUMP_SAMPLES_SUPPLY
+  SITE_LABORATORY
+  SUPPLY
+  UNDERGROUND
+  ROUND_MILLS
+  BALL_MILLS
+  HAMMER_MILLS
+  OTHER
+  TRANSPORT
+  PROJECTS
+}
+
+enum SampleType {
+  AFTER_MILLING_SANDS_SPOT_CHECK
+  BALL_MILL_BEFORE_MILLING
+  BEFORE_MILLING_ORES
+  BEFORE_MILLING_ORES_SPOT_CHECK
+  CARBON_SAMPLE_ELUTION
+  CHECK_SAMPLE
+  ELUTION_SOLUTION_SAMPLES
+  CIP_SOLID_SAMPLES
+  CYCLONE_OVERFLOW
+  DUMP_EXPLORATION_SAMPLES
+  EXPERIMENT_SAMPLES
+  EXPLORATION_ORES
+  EXPLORATION_SANDS
+  GROUND_CHECK
+  BALL_MILL_FEED
+  MILLED_TANK_SANDS
+  OLD_DUMP_SANDS
+  ORES_NOT_HERE
+  OTHER_BEFORE_CRUSHED_ORE_LOAD
+  OTHER_CRUSHED_ORE_LOAD
+  OTHER_CRUSHED_ORES_RESAMPLE
+  OTHER_ORES_SPOT_CHECK
+  OTHER_SANDS_LOAD
+  OTHER_SANDS_RESAMPLE
+  OTHER_SANDS_SPOT_CHECK
+  PARTNER_BEFORE_CRUSHED_ORE_LOAD
+  PARTNER_CRUSHED_ORE_LOAD
+  PARTNER_CRUSHED_ORES_RESAMPLE
+  PARTNER_ORES_SPOT_CHECK
+  PARTNER_SANDS_LOAD
+  PARTNER_SANDS_RESAMPLE
+  PARTNER_SANDS_SPOT_CHECK
+  PARTNER_SANDS_TEST
+  PRE_PILING_SAMPLES_SUPPLY
+  SANDS_NOT_HERE
+  CIP_SOLUTION_SAMPLES
+  STOCKPILE_ORES_RESAMPLE
+  STOCKPILED_ORES
+  STOCKPILED_SANDS
+  MILLED_TANK_SANDS_RESAMPLE
+  TRENCH_SAMPLES_EXPLORATION
+  TROMILL_DISCHARGE
+  UNDERGROUND_SAMPLES_EXPLORATION
+  AFTER_MILL_SANDS
+  ROUNDMILL_DISCHARGE_SAMPLE
+}
+
+enum Primer {
+  ES
+  IS
+  EC
+  IC
+  HM
+  RM
+  BM
+  NH
+  OS
+}
+
+enum SampleStatus {
+  PENDING // new sample
+  ASSAYED // All sub samples have been grades
+  COMPLETED // Payment has been made
+  REJECTED // Sample has been rejected
+}
+
+enum AssayType {
+  TWELVE_HOURS
+  TWENTY_HOURS
+  FORTY_HOURS
+  FIRE_ASSAY
+  ASHING
+  CARBON_DIGESTION
+  CARBON_ACTIVITY_TEST
+  CARBON_DRY_WEIGHT_TEST
+  GRIND_TEST
+  PH_TEST
+  SIXTY_HOURS
+  TWENTY_FOUR_HOURS
+  FORTY_EIGHT_HOURS
+  CIP_SOLUTION
+  ELUTION_SOLUTION
+  CIP_SOLID
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+model WorkOrder {
+  id                 String                @id @default(cuid())
+  siteId             String?
+  site               Site?                 @relation(fields: [siteId], references: [id])
+  client             Client                @relation(fields: [clientId], references: [id])
+  clientId           String
+  area               SubArea               @relation(fields: [areaId], references: [id])
+  areaId             String
+  shaft              Shaft                 @relation(fields: [shaftId], references: [id])
+  shaftId            String
+  estimatedTonnage   Float?
+  priority           JobPriority
+  requiredEquipment  Equipment[]           @relation("WorkOrderEquipment")
+  preferredStartTime DateTime?
+  expectedStartTime  DateTime?
+  expectedEndTime    DateTime?
+  actualStartTime    DateTime?
+  actualEndTime      DateTime?
+  status             WorkOrderStatus       @default(PENDING)
+  attachments        WorkOrderAttachment[]
+  comments           WorkOrderComment[]
+  createdAt          DateTime              @default(now())
+  updatedAt          DateTime              @updatedAt
+}
+
+model WorkOrderAttachment {
+  id          String    @id @default(cuid())
+  siteId      String?
+  site        Site?     @relation(fields: [siteId], references: [id])
+  workOrder   WorkOrder @relation(fields: [workOrderId], references: [id])
+  workOrderId String
+  fileUrl     String
+  fileType    String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model WorkOrderComment {
+  id          String    @id @default(cuid())
+  siteId      String?
+  site        Site?     @relation(fields: [siteId], references: [id])
+  workOrder   WorkOrder @relation(fields: [workOrderId], references: [id])
+  workOrderId String
+  author      User      @relation(fields: [authorId], references: [id])
+  authorId    String
+  content     String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+enum WorkOrderStatus {
+  PENDING
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  ON_HOLD
+}
+
+enum OreType {
+  FINE_ONLY
+  BOULDER_ONLY
+  MIXED
+}
+
+enum MillingType {
+  SEPARATOR_MILLING
+  STRAIGHT_POND_MILLING
+}
+
+model MillingLoad {
+  id                           String                     @id @default(cuid())
+  weighbridge                  Weighbridge                @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId                String                     @unique
+  siteId                       String
+  oreType                      OreType?
+  millingType                  MillingType?
+  assessedAt                   DateTime?
+  assessmentNotes              String?
+  progressStatus               MillingLoadProgressStatus?
+  startedWaitingAt             DateTime?
+  finishedWaitingAt            DateTime?
+  startedCrushingAt            DateTime?
+  finishedCrushingAt           DateTime?
+  startedMillingAt             DateTime?
+  finishedMillingAt            DateTime?
+  feedSize                     Float?
+  dischargeSize                Float?
+  issuesDescription            String?
+  crusherSettings              String?
+  crushedByUserId              String?
+  milledByUserId               String?
+  assesedByUserId              String?
+  crusherId                    String?
+  millId                       String?
+  downtime                     Int?
+  startHourMeter               String? // Mill hour meter at milling start
+  stopHourMeter                String? // Mill hour meter at milling stop
+  damAllocation                String? // Dam allocation reference for the run
+  tonnageMilled                Float? // Tons milled during the milling run
+  feedRate                     Float? // Feed rate recorded during milling
+  slurryDensity                Float? // Slurry density recorded during milling
+  millDowntime                 Int? // Downtime (minutes) during milling
+  millIssuesDescription        String? // Issues observed during milling
+  rejected                     Boolean                    @default(false) // Set to false when milling is completed
+  tonnageMilledBeforeRejection Float? // Tonnage milled before rejection (user-entered)
+  rejectionReason              String?
+  rejectionNotes               String?
+  rejectedAt                   DateTime?
+  panningNames                 String? // Recovery panning names (free text)
+  accessSlip                   String? // Access slip reference for recovery booking
+  bookingTime                  DateTime? // Timestamp when recovery was booked/started
+  recoveryFirstWeigh           Float? // First weigh during recovery
+  recoverySecondWeigh          Float? // Second weigh during recovery
+  amalgamWeight                Float? // Amalgam weight recovered
+  toastWeight                  Float? // Toast weight recovered
+  recoveredAt                  DateTime? // When recovery was completed
+  createdAt                    DateTime                   @default(now())
+  updatedAt                    DateTime                   @updatedAt
+  millingReceipts              MillingReceipt[]
+}
+
+model CrushingLoad {
+  id                          String                     @id @default(cuid())
+  weighbridge                 Weighbridge                @relation(fields: [weighbridgeId], references: [id])
+  weighbridgeId               String                     @unique
+  siteId                      String?
+  site                        Site?                      @relation(fields: [siteId], references: [id])
+  crusherId                   String?
+  crusher                     Equipment?                 @relation("CrushingLoadCrusher", fields: [crusherId], references: [id])
+  crushingFirstWeigh          Float?
+  crushingSecondWeigh         Float?
+  firstWeighedAt              DateTime?
+  operatorName                String?
+  startedWaitingAt            DateTime?
+  startedCrushingAt           DateTime?
+  finishedCrushingAt          DateTime?
+  dischargeSize               Float?
+  crusherSettings             String?
+  downTime                    Int?
+  issuesDescription           String?
+  millingLoadProgressStatus   MillingLoadProgressStatus?
+  createdAt                   DateTime                   @default(now())
+  updatedAt                   DateTime                   @updatedAt
+
+  @@index([siteId])
+  @@index([crusherId])
+}
+
+enum MillingPayment {
+  TOAST
+  CASH
+  UNPAID
+}
+
+model MillingReceipt {
+  id              String         @id @default(cuid())
+  siteId          String?
+  site            Site?          @relation(fields: [siteId], references: [id])
+  receiptNumber   String
+  millingPayment  MillingPayment
+  millingCharge   Float
+  transportFee    Float
+  otherDeductions Float
+  totalDeductions Float
+  paymentDate     DateTime?
+  notes           String?
+  createdByUserId String?
+  createdBy       User?          @relation("MillingReceiptCreator", fields: [createdByUserId], references: [id])
+  millingLoadId   String
+  millingLoad     MillingLoad    @relation(fields: [millingLoadId], references: [id], onDelete: Cascade)
+  /// Per-load version: v1, v2, v3… (monotonic per milling load).
+  version         Int
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@unique([millingLoadId, version])
+  @@unique([siteId, receiptNumber])
+}
+
+enum MillingLoadProgressStatus {
+  NEEDS_INITIAL_ASSESSMENT
+  NEEDS_CRUSHING
+  IN_CRUSHER
+  NEEDS_MILLING
+  IN_MILL
+  MILLED
+  IN_RECOVERY
+  RECOVERED
+  COMPLETED
+  REJECTED_BEFORE_CRUSHING
+  REJECTED_BEFORE_MILLING
+  REJECTED_DURING_CRUSHING
+  REJECTED_DURING_MILLING
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model RiskAssessment {
+  id                     String    @id @default(cuid())
+  equipment              Equipment @relation(fields: [equipmentId], references: [id])
+  equipmentId            String
+  lubrication            Boolean   @default(false)
+  beltCondition          Boolean   @default(false)
+  waterSupply            Boolean   @default(false)
+  slurryPump             Boolean   @default(false)
+  emergencyStop          Boolean   @default(false)
+  lotoVerification       Boolean   @default(false)
+  passed                 Boolean   @default(false)
+  userId                 String
+  siteId                 String
+  riskLevel              RiskLevel
+  ppeUsed                String?
+  controlMeasuresApplied String?
+  hazardsIdentified      String?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+}
+
+/// Per-site sync state; stored in cloud (and optionally edge) for visibility. siteId matches SITE_ID on the edge.
+model SiteSyncState {
+  id                      String    @id @default(cuid())
+  siteId                  String    @unique
+  lastSyncedToCloudAt     DateTime?
+  lastSyncedFromCloudAt   DateTime?
+  syncToCloudInProgress   Boolean   @default(false)
+  syncToCloudRunId        String?
+  syncToCloudStartedAt    DateTime?
+  syncFromCloudInProgress Boolean   @default(false)
+  syncFromCloudRunId      String?
+  syncFromCloudStartedAt  DateTime?
+  lastHeartbeatAt         DateTime?
+  updatedAt               DateTime  @updatedAt
+}
+
+enum SyncDirection {
+  TO_CLOUD
+  FROM_CLOUD
+}
+
+enum SyncRunStatus {
+  RUNNING
+  SUCCESS
+  FAILED
+  PARTIAL
+}
+
+enum SyncTrigger {
+  SCHEDULED
+  MANUAL
+  RETRY
+}
+
+model SyncRun {
+  id         String        @id @default(cuid())
+  siteId     String?
+  site       Site?         @relation(fields: [siteId], references: [id])
+  runId      String
+  direction  SyncDirection
+  status     SyncRunStatus
+  trigger    SyncTrigger?
+  startedAt  DateTime
+  finishedAt DateTime?
+  durationMs Int?
+
+  tablesUpserted    Int?
+  totalRowsUpserted Int?
+  totalAdded        Int?
+  totalUpdated      Int?
+  errorCount        Int?
+
+  tablesSuccessful Int?
+  tablesTotal      Int?
+  rowsSuccessful   Int?
+  rowsAttempted    Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tableStats SyncRunTableStat[]
+  errors     SyncRunError[]
+
+  @@index([siteId, startedAt])
+  @@index([runId])
+  @@index([direction, startedAt])
+}
+
+model SyncRunTableStat {
+  id        String  @id @default(cuid())
+  syncRun   SyncRun @relation(fields: [syncRunId], references: [id], onDelete: Cascade)
+  syncRunId String
+  tableName String
+  added     Int     @default(0)
+  updated   Int     @default(0)
+  deleted   Int     @default(0)
+  failed    Boolean @default(false)
+
+  @@unique([syncRunId, tableName])
+  @@index([tableName])
+}
+
+model SyncRunError {
+  id        String   @id @default(cuid())
+  syncRun   SyncRun  @relation(fields: [syncRunId], references: [id], onDelete: Cascade)
+  syncRunId String
+  tableName String
+  rowId     String?
+  message   String
+  errorCode String?
+  createdAt DateTime @default(now())
+
+  @@index([tableName])
+}
