@@ -1,0 +1,889 @@
+Reg Number ;Fleet ID;Type;Vin/Serial ID;Make;Model;Engine Capacity;Fuel Consumption;Loading/Carrying Capacity (Tonnes);Location;Company;Status;Number
+0;M1;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;1
+0;A1;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;1
+0;5TPH1;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;1
+0;N1;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;1
+0;3TPH1;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;1
+0;CR1;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;1
+0;1MML1;Loader;200835004;Wulf Renoster ;Front End Loader;0;15;3 Ton ;Chanton ;Magaya Mining;;1
+0;M2;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;2
+0;5TPH2;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;2
+0;3TPH2;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;2
+0;N2;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;2
+0;CR2;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;2
+AHF4219;1MML2;Loader;211058011;Wulf Renoster ;Front End Loader;0;15;3 Ton ;Walden;Magaya Mining;;2
+AHH7451;N3;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;3
+AGL7329;M3;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;3
+AGJ0312;3TPH3;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;3
+AGZ8676;5TPH3;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;3
+AGL8435;CR3;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;3
+AGZ5340;1MML3;Loader;211058011;Wulf Oliphant ;Front End Loader;0;20;5 Ton ;Walden ;Magaya Mining;;3
+AGL6353;M4;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;4
+AGZ5592;N4;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;4
+AHE0277;1MML4;Loader;XUG0050GPNCB08684;XCGM;Front End Loader;0;20;5 Ton ;Walden;Magaya Mining;;4
+AHA2233;1MML5;Loader;221235175;Wulf Renoster ;Front End Loader;0;15;3 Ton ;Walden;Magaya Mining;;5
+AGZ8677;M5;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;5
+AGZ8678;N5;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;5
+n/a;1MML6;Loader;220135142;Wulf Renoster ;Front End Loader;0;15;3 Ton ;Walden;Magaya Mining;;6
+AGL8027;M6;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;6
+AGL8434;N6;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;6
+AGZ8679;M7;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;7
+AGL6352;N7;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;7
+AGZ6672;1MML7;Loader;0;Wulf Renoster ;Front End Loader;0;15;3 Ton ;Walden;Magaya Mining;;7
+AHE1578;M8;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;8
+AGZ8680;1MML8;Loader;XUG0600KHPCB08459;XCGM;Front End Loader;0;20;5 Ton ;Walden;Magaya Mining;;8
+AGZ7343;M9;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;9
+AGL7330;1MML9;Loader;0;Cat ;Front End Loader;0;15;3 Ton ;Walden;Magaya Mining;;9
+AGZ8656;M10;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;10
+AHA2792;1MML10;Loader;0;Cat ;Front End Loader;0;15;3 Ton ;Walden;Magaya Mining;;10
+n/a;M11;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;11
+AFQ3907;1MMT11;Tipper;LZZPELND4LJ171183;Hohan N7B340;Tipper Truck;0;2,2;20t-Tipper;Walden;Magaya Mining;;11
+AGZ6652;M12;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;12
+AGL2425;1MMT12;Tipper;LZZPELNDXLJ152699;Hohan N7B340;Tipper Truck;0;2,2;20t-Tipper;Walden;Magaya Mining;;12
+AGZ8664;M13;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;13
+AGZ8681;1MMT13;Tipper;LZZPELND1LJ171187;Hohan N7B340;Tipper Truck;0;2,2;20t-Tipper;Walden;Magaya Mining;;13
+n/a;M14;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;14
+AFQ8350;1MMT14;Tipper;LZZ5ELSD5MN887953;Howo 371;Tipper Truck;0;2,2;25t-Tipper;Walden;Magaya Mining;;14
+AGZ6535;M15;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;15
+ ;1MMT15;Tipper;LZZ5ELSD4NAQO17930;Howo 371;Tipper Truck;0;2,2;25t-Tipper;Walden;Magaya Mining;;15
+AHA3999;1MMT16;Tipper;LZGJLDR41NX059560;Shacman F3000;Tipper Truck;0;2,2;30t-Tipper;Walden;Magaya Mining;;16
+AGL9284;M16;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;16
+AHA3999;M17;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;17
+AGZ8655;1MMT17;Tipper;LZGJLDR46NX059571;Shacman F3000;Tipper Truck;0;2,2;30t-Tipper;Walden;Magaya Mining;;17
+AGZ6507;M18;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;18
+AFQ8351;1MMT18;Tipper;LZGJLDR46NX059604;Shacman F3000;Tipper Truck;0;2,2;30t-Tipper;Walden;Magaya Mining;;18
+n/a;M19;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;19
+AGJ1977;1MMP19;Pool;KDH206-8084179;Toyota ;Mini Bus;0;0;12 Seater;Walden;Magaya Mining;;19
+AFQ8355;M20;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;20
+AHE 2201;1MMP20;Pool;XZU304-1009528;Hino Dutro ;Small Truck;0;0;2Ton;Chanton ;Magaya Mining;;20
+AGL7327;1MMP21;Pool;LY131-0003970;Toyota Toyoace ;Small Truck;0;0;1.5Ton;Walden;Magaya Mining;;21
+0;1MMP22;Pool;XZU411-0013267;Hino Dutro ;Small Truck;0;0;3Ton;Walden;Magaya Mining;;22
+0;1MMZ23;Excavator;YN15506022;Bell Kobellco;Excavator;0;25,5;22 Ton;Walden;Magaya Mining;;23
+0;1MMZ24;Excavator;4TF10256;International ;Excavator;0;25,5;22 Ton;Walden;Magaya Mining;;24
+0;1MMZ25;Excavator;4TF10036;Caterpillar ;Excavator;0;25,5;22 Ton;Walden;Magaya Mining;;25
+0;1MMJ26;TLB;CD4045G178537;JCB;TLB;0;5,5;1 Ton;E4;Magaya Mining;;26
+0;1MMJ27;TLB;CD4045G178537;Bell TLB;TLB;0;5,5;1 Ton;Chanton ;Magaya Mining;;27
+n/a;1MMJ28;TLB;CD4045G178537;Bell TLB;TLB;0;5,5;1 Ton;Walden;Magaya Mining;;28
+n/a;1MMZ29;Excavator;4TF03915;BT;Excavator ;0;25,5;20 Ton;BT;Magaya Mining;;29
+n/a;1MMS30;Tractor;0;Massey Ferguson 440;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;30
+n/a;1MMS31;Tractor;0;Massey Ferguson ;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;31
+n/a;1MMS32;Tractor;0;Massey Ferguson ;Tractor;0;0;7t-Tractor;BT;Magaya Mining;;32
+n/a;1MMS33;Tractor;MF -034479;Massey Ferguson 390;Tractor;0;0;7t-Tractor;BT;Magaya Mining;;33
+n/a;1MMS34;Tractor;0;Massey Ferguson ;Tractor;0;0;7t-Tractor;BT;Magaya Mining;;34
+n/a;1MMS35;Tractor;0;Massey Ferguson ;Tractor;0;0;7t-Tractor;BT;Magaya Mining;;35
+n/a;1MMS36;Tractor;RIZO(Eng.n0-87840783);Y.T.O;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;36
+n/a;1MMS37;Tractor;B18290;Luzhong;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;37
+n/a;1MMS38;Tractor;BTY19070;FORD TANDEM-1;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;38
+n/a;1MMS39;Tractor;0;FORD TANDEM-2;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;39
+n/a;1MMS40;Tractor;0;Massey Ferguson ;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;40
+n/a;1MMS41;Tractor;0;Massey Ferguson ;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;41
+n/a;1MMS42;Tractor;MF-6207514M1;Massey Ferguson ;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;42
+n/a;1MMS43;Tractor;0;Ursus;Tractor;0;0;7t-Tractor;BT;Magaya Mining;;43
+n/a;1MMS44;Tractor;0;New Holland Tractor ;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;44
+n/a;1MMF45;Tellehandler;0;Caterpillar ;Forklift;0;2,9;1Ton;Walden;Magaya Mining;;45
+n/a;1MMX46;Generator;0;AKSA;Generator;0;0;525KVA;Walden;Magaya Mining;;46
+n/a;1MMX47;Generator;0;AKSA;Generator;0;0;525KVA;Amatola;Magaya Mining;;47
+n/a;1MMX48;Generator;0;AKSA;Generator;0;0;525KVA;WALDEN CIP;Magaya Mining;;48
+n/a;1MMX49;Generator;0;AKSA;Generator;0;0;525KVA;WALDEN CIP;Magaya Mining;;49
+n/a;1MMX50;Generator;0;YUCHAI;Generator;0;0;500KVA;CIP;Magaya Mining;;50
+n/a;1MMX51;Generator;0;YUCHAI;Generator;0;0;500KVA;Mills;Magaya Mining;;51
+n/a;1MMX52;Generator;0;YUCHAI;Generator;0;0;100KVA;Elvington;Magaya Mining;;52
+n/a;1MMX53;Generator;0;YUCHAI;Generator;0;0;100KVA;WORKSHOP;Magaya Mining;;53
+n/a;1MMX54;Generator;0;YUCHAI;Generator;0;0;250KVA;WORKSHOP;Magaya Mining;;54
+n/a;1MMX55;Generator;0;YUCHAI;Generator;0;0;200KVA;WALDEN CIP;Magaya Mining;;55
+n/a;1MMX56;Generator;0;AKSA;Generator;0;0;165KVA;WALDEN CIP;Magaya Mining;;56
+n/a;1MMX57;Generator;0;AKSA;Generator;0;0;110KVA;WALDEN CIP;Magaya Mining;;57
+n/a;1MMX58;Generator;0;YUCHAI;Generator;0;0;125KVA;Elvington;Magaya Mining;;58
+n/a;1MMX59;Generator;0;AKSA;Generator;0;0;160KVA;Giant    ;Magaya Mining;;59
+n/a;1MMX60;Generator;0;AKSA;Generator;0;0;200KVA;Blue Rock (River);Magaya Mining;;60
+n/a;1MMX61;Generator;0;YUCHAI;Generator;0;0;100KVA;NEW FOUND ;Magaya Mining;;61
+n/a;1MMX62;Generator;0;YUCHAI;Generator;0;0;150KVA;OLD MILLS (NOIC);Magaya Mining;;62
+n/a;1MMX63;Generator;0;YUCHAI;Generator;0;0;250KVA;WALDEN NEW MILLS;Magaya Mining;;63
+n/a;1MMX64;Generator;0;UNKNOWN;Generator;0;0;60KVA;SLIMES DAM;Magaya Mining;;64
+0;1MMX65;Generator;0;ATA;Generator;0;0;125KVA;ZOWA;Magaya Mining;;65
+0;1MMX66;Generator;0;YUCHAI;Generator;0;0;125KVA;BT MILLS ARTIISINAL ;Magaya Mining;;66
+0;1MMX67;Generator;0;YUCHAI;Generator;0;0;150KVA;STALIN;Magaya Mining;;67
+0;1MMX68;Generator;0;YUCHAI;Generator;0;0;250KVA;NEW FOUND (B/DOWN);Magaya Mining;;68
+AGR5598;1MMX69;Generator;0;LISTER ;Generator;0;0;15KVA;Blue Rock Main Shaft;Magaya Mining;;69
+AEU8728;1MMX70;Generator;0;PERKINGS ;Generator;0;0;20KVA;STANDBY GENERATOR;Magaya Mining;;70
+0;1MMX71;Generator;0;CHINESE;Generator;0;0;60KVA;Giant North Shaft;Magaya Mining;;71
+ADY 5084;1MMX72;Generator;0;YUCHAI;Generator;0;0;150KVA;Alabama;Magaya Mining;;72
+AGR4590 ;1MMX73;Generator;0;CHINESE;Generator;0;0;60KVA;Iron North;Magaya Mining;;73
+0;1MMX74;Generator;0;YUCHAI;Generator;0;0;200KVA;SLIMES DAM;Magaya Mining;;74
+0;1MM75;Lower Bed Trailer;0;Trailer;Trailer;0;0;30ton;Walden ;Magaya Mining;;75
+AGR4467 ;1MMP76;Pool;0;FORD;SUV;0;0;0;Chanton ;Magaya Mining;;76
+0;1MMP77;Pool;0;ISUZU;Pick-Up Truck;0;0;0;Walden;Magaya Mining;;77
+0;1MMP78;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Walden ;Magaya Mining;;78
+AEV2257;1MMP79;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Chanton;Magaya Mining;;79
+ACE 2899;1MMP81;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Walden;Magaya Mining;;81
+AGH 2561;1MMJ82;TLB;0;MANITOU-2TON;TLB;0;5,5;2 Ton;Walden;Magaya Mining;;82
+0;1MMP83;Pool;0;HYUNDAI 1ton;Small Truck;0;0;1Ton;Harare;Magaya Mining;;83
+AFJ2337;1MMP84;Pool;0;3 ton;Small Truck;0;0;3Ton;Mazowe;Magaya Mining;;84
+0;1MMP85;Pool;0;MAZDA;Pick-Up Truck;0;0;0;Harare;Magaya Mining;;85
+AFU 8534;1MMP86;Pool;0;MITSUBISHI;0;0;0;0;Harare;Magaya Mining;;86
+AGB 3463;1MMP87;Pool;0;TOYOTA;Van;0;0;0;Harare;Magaya Mining;;87
+AGJ0494;1MMP88;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Harare;Magaya Mining;;88
+0;1MMP89;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Harare;Magaya Mining;;89
+0;1MMP90;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Mazowe;Magaya Mining;;90
+0;1MMP91;Pool;0;TOYOTA;Pick-Up Truck;0;0;0;Mazowe;Magaya Mining;;91
+AEG1617;1MMP92;Pool;0;HONDA FIT;Hatchback;0;0;0;Walden;Magaya Mining;;92
+0;2ASZ93;Excavator;YN15506089;Kobelco;Kobelco;0;25,5;22 Ton;Walden;All Solar Zim;;93
+0;2BIT94;Tipper;0;DAF;DAF;0;2,2;25t-Tipper;Walden;Bobo Investments;;94
+0;2BDT95;Tipper;0;SCANIA;SCANIA;0;2,2;25t-Tipper;Walden;Buenos  Dias Logistics;;95
+0;2CRB96;Bus;0;MARCOPOLO;MARCOPOLO;0;0;65 Seater;Walden;Crebal;;96
+No reg;2CRB97;Bus;0;MARCOPOLO;MARCOPOLO;0;0;65 Seater;Walden;Crebal;;97
+0;2CCS98;Tractor;0;New Holland ;New Holland ;0;0;10t-Tractor;Walden;Connect Cut;;98
+0;2CCS99;Tractor;0;Tandem Hauler ;Tandem Hauler ;0;0;15t-Tractor;Walden;Connect Cut;;99
+0;2CCS100;Tractor;0;Bell ;Bell ;0;0;15t-Tractor;Walden;Connect Cut;;100
+AFJ  7619;2CCS101;Tractor;0;Bell ;Bell ;0;0;15t-Tractor;Walden;Connect Cut;;101
+0;2CCZ102;Excavator;0;JCB;JCB;0;25,5;22 Ton;Walden;Connect Cut;;102
+0;2CCS103;Tractor;0;Bell;Bell;0;0;15t-Tractor;Walden;Connect Cut;;103
+AGB0904;2DBT104;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;Dale Brands;;104
+0;2DBT105;Tipper;11SHP03-0736;TATA;TATA;0;2,2;15t-Tipper;Walden;Dale Brands;;105
+0;2EST109;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;109
+0;2EST110;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;110
+0;2EST111;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;111
+AGJ 0985;2EST112;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;112
+0;2EST113;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;113
+0;2EST114;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;114
+0;2EST115;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;115
+AFQ 3125;2EST116;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;116
+AGJ 0018;2EST117;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;117
+0;2EST118;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;118
+AGR5906 ;2EST119;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;119
+AFQ 2109;2EST120;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;120
+AGR4433 ;2ESZ121;Excavator;0;LIUGONG;LIUGONG;0;25,5;22 Ton;Walden;Earth Shift;;121
+AGR3847 ;2ESJ122;TLB;0;LIUGONG;LIUGONG;0;5,5;2.5 Ton;Walden;Earth Shift;;122
+AGJ 0321;2EGT123;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;123
+AGR3536 ;2EGT124;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;124
+0;2EGT125;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Mazowe;EG Construction ;;125
+0;2EGT126;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Mazowe;EG Construction ;;126
+AGJ 0235;2EGT127;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;127
+0;2EGT128;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;128
+AGR3539 ;2EGT129;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;129
+0;2EGT130;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;130
+0;2EGT131;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;131
+AGZ 1353;2EGT132;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;132
+AEQ9773;2EGT133;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;EG Construction ;;133
+CRC014;2EGD134;Dozer;0;CAT-D6;CAT-D6;0;0;0;Walden;EG Construction ;;134
+AGJ0613;2EGZ135;Excavator;0;HYUNDAI;HYUNDAI;0;25,5;22 Ton;Walden;EG Construction ;;135
+0;2EGZ136;Excavator;0;SANY;SANY;0;25,5;22 Ton;Walden;EG Construction ;;136
+AGZ6448;2EGG137;Grader;0;John Deere;John Deere;0;0;Grader;Walden;EG Construction ;;137
+AGZ 6209;2EGJ138;TLB;0;HYUNDAI;HYUNDAI;0;5,5;2 Ton;Walden;EG Construction ;;138
+0;2EGL139;Loader;0;XGMA-3TON;XGMA-3TON;0;15;5 Ton ;Walden;EG Construction ;;139
+0;2EGL140;Loader;0;XGMA;XGMA;0;15;3 Ton ;Walden;EG Construction ;;140
+0;2EGL141;Loader;0;HYUNDAI;HYUNDAI;0;15;3 Ton ;Walden;EG Construction ;;141
+0;2EMZ142;Excavator;0;KOMATSU;KOMATSU;0;25,5;22 Ton;Mhangura;Esman;;142
+0;2GTT143;Tipper;0;SCANIA;SCANIA;0;2,2;20t-Tipper;Chanton ;Gary Transport ;;143
+0;2KHT144;Tipper;0;DAF;DAF;0;2,2;15t-Tipper;Walden;Kan Horizon ;;144
+0;2LRT145;Tipper;0;HINO;HINO;0;2,2;15t-Tipper;Walden;Levante Resources;;145
+0;2LRT146;Tipper;0;HINO;HINO;0;2,2;15t-Tipper;Walden;Levante Resources;;146
+0;2LRT147;Tipper;0;HINO;HINO;0;2,2;15t-Tipper;Walden;Levante Resources;;147
+0;2LRT148;Tipper;0;HINO;HINO;0;2,2;15t-Tipper;Walden;Levante Resources;;148
+0;2MLD149;Dozer;0;CAT;CAT;0;0;0;Walden;Methusela;;149
+0;2MLZ150;Excavator;0;BELL KOBELCO;BELL KOBELCO;0;25,5;22 Ton;Walden;Methusela;;150
+AFM7033;2MLZ151;Excavator;0;BELL KOBELCO;BELL KOBELCO;0;25,5;22 Ton;Walden;Methusela;;151
+0;2MLZ152;Excavator;0;BELL KOBELCO;BELL KOBELCO;0;25,5;22 Ton;Walden;Methusela;;152
+AGZ3735;2MLZ153;Excavator;0;BELL KOBELCO;BELL KOBELCO;0;25,5;22 Ton;Walden;Methusela;;153
+0;2MLD154;Dozer;0;CAT;CAT;0;0;0;Walden;Methusela;;154
+AGL 8127;2MLJ155;TLB;0;BELL;BELL;0;5,5;2 Ton;Walden;Methusela;;155
+AHA1074;2MLJ156;TLB;0;BELL;BELL;0;5,5;2 Ton;Walden;Methusela;;156
+LTS4K;2MLJ157;TLB;0;BELL;BELL;0;5,5;2 Ton;Walden;Methusela;;157
+AGJ0611;2MLL158;Loader;0;WUHLF;WUHLF;0;15;3 Ton ;Walden;Methusela;;158
+AEZ 5055;2MLL159;Loader;0;WUHLF;WUHLF;0;20;5 Ton ;Walden;Methusela;;159
+AEM5504;2PAZ160;Excavator;0;HYUNDAI-2TON;HYUNDAI-22TON;0;25,5;22 Ton;Walden;Plant Africa;;160
+0;2PAD161;Dozer;0;Shantui;Shantui;0;0;D6;Walden;Plant Africa;;161
+ABI2964;2PAL162;Loader;0;Shantui;Shantui;0;20;5 Ton ;Walden;Plant Africa;;162
+0;2PAZ163;Excavator;H50L90484T;Hyndai 305LC;Hyndai 305LC;0;25,5;22 Ton;Walden;Plant Africa;;163
+0;2PAZ164;Excavator;0;SDLG;SDLG;0;37;38 Ton;Walden;Plant Africa;;164
+0;2PAL165;Loader;0;LIUGONG;LIUGONG;0;20;5 Ton;Mazowe;Plant Africa;;165
+0;2RAL166;Loader;0;SHANTUI ;SHANTUI ;0;20;5 Ton ;Walden;Raventa;;166
+AGJ4210;2RAH167;Lighting Tower;0;Lighting tower;Lighting tower;0;0;0;Mazowe;Raventa;;167
+AGJ 5316;2RAL168;Loader;86SL50L3NMN013814;SHANTUI ;SHANTUI ;0;20;5 Ton;Mazowe;Raventa;;168
+0;2RAL169;Loader;86SL50L3NMN013816;SHANTUI ;SHANTUI ;0;20;5 Ton ;Walden;Raventa;;169
+0;2SLT170;Tipper;0;SCANIA;SCANIA;0;2,2;20t-Tipper;Zowa;Sage Logistics ;;170
+AGZ3146;2SOJ171;TLB;0;CASE-2TON;CASE-2TON;0;5,5;2 Ton;Walden;Smac Construction;;171
+0;2SOL172;Loader;0;LIUGONG;LIUGONG;0;20;5 Ton ;Walden;Smac Construction;;172
+0;2SOL173;Loader;0;LIUGONG;LIUGONG;0;20;5 Ton ;Walden;Smac Construction;;173
+0;2SOL174;Loader;0;SANY;SANY;0;20;5 Ton ;Walden;Smac Construction;;174
+0;2SOL175;Loader;0;SANY;SANY;0;20;5 Ton ;Walden;Smac Construction;;175
+0;2SDT176;Tipper;0;HOWO;HOWO;0;2,2;25t-Tipper;Walden;SMD;;176
+0;2SDT177;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;SMD;;177
+0;2TIT178;Tipper;0;SCANIA;SCANIA;0;2,2;20t-Tipper;Walden;Thinkstock Investments Pvt Ltd;;178
+0;2TIT179;Tipper;0;SCANIA;SCANIA;0;2,2;20t-Tipper;Walden;Thinkstock Investments Pvt Ltd;;179
+AGJ 9283;2TIT180;Tipper;0;SCANIA;SCANIA;0;2,2;20t-Tipper;Walden;Thinkstock Investments Pvt Ltd;;180
+AGZ 0298;2TIT181;Tipper;0;SCANIA;SCANIA;0;2,2;20t-Tipper;Walden;Thinkstock Investments Pvt Ltd;;181
+0;2TIL182;Loader;0;SDLG-5TON;SDLG-5TON;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;182
+0;2TIL183;Loader;0;LIUGONG;LIUGONG;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;183
+0;2TLF184;Tellehandler;0;MANITOU;MANITOU;0;2,9;2 Ton;Walden;TLS;;184
+E01;2VET185;Tipper;0;MAN;MAN;0;2,2;30t-Tipper;Walden;Vicemode Engineering;;185
+0;2MLZ186;Excavator;0;BELL KOBELCO;BELL KOBELCO;0;25,5;22 Ton;Walden;Methusela;;186
+0;2TIL187;Loader;VLGL9530K0620365;SDLG;SDLG;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;187
+0;2WBP188;Pool;0;TOYOACE;TOYOACE;0;0;0;Walden;Webline;;188
+AGR3535 ;2WTP189;Pool;0;TOYOTA ;TOYOTA ;0;0;1 Ton;Walden;Willo & TH Safety;;189
+AGJ 4918 ;2WTP190;Pool;0;MAZDFA;MAZDA;0;0;3 Ton;Walden;Willo & TH Safety;;190
+0;2WTP191;Pool;0;HINO;HINO;0;0;2.5 Ton;Walden;Willo & TH Safety;;191
+0;2SLT192;Tipper;0;SCANIA;TIPPER TRUCK;0;2,2;25t-Tipper;Walden;Sage Logistics ;;192
+AFQ 3770;2VST193;Tipper;0;SCANIA;Tipper;0;2,2;20t-Tipper;Walden;Vision Star ;;193
+AGL 3482;2VST194;Tipper;0;SCANIA;Tipper;0;2,2;20t-Tipper;Walden;Vision Star ;;194
+0;2ATS195;Tractor;0;Masey Fegurson;Tractor;0;0;5t-Tractor;Walden;Alpha Transport;;195
+0;2ATS196;Tractor;0;Masey Fegurson;Tractor;0;0;5t-Tractor;Walden;Alpha Transport;;196
+0;2EST197;Tipper;0;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Walden;Earth Shift;;197
+0;2EGW198;Water Bowser;0;HOWO;Water Bowser;0;0;20 000L;Mazowe;EG Construction ;;198
+AGR3900 ;2EGW199;Water Bowser;0;HOWO;Water Bowser;0;0;20 000L;Walden;EG Construction ;;199
+0;2EGL200;Loader;0;SEM;Loader;0;15;3 Ton ;Walden;EG Construction ;;200
+AGJ0495;2MLL201;Loader;0;LIUGONG;Loader;0;20;5 Ton ;Walden;Methusela;;201
+0;2BIT202;Tipper;773257M3647C;HOWO;Tipper;0;2,2;20t-Tipper;Zvishavane ;Bobo Investments;;202
+0;2MLS203;Tractor;0;Tandem ;Tractor;0;0;7t-Tractor;Walden;Methusela;;203
+AEZ 5895;1MMP204;Pool;0;Toyota;Pick-Up Truck;0;0;1ton;Walden;Magaya Mining;;204
+AGL8085;1MMP205;Pool;0;Toyota;Pick-Up Truck;0;0;1ton;Walden;Magaya Mining;;205
+AGL7837;1MMP206;Pool;0;Toyota;Pick-Up Truck;0;0;1ton;Walden;Magaya Mining;;206
+0;1MMP207;Pool;0;Toyota;Pick-Up Truck;0;0;1ton;Harare;Magaya Mining;;207
+0;1MMJ208;TLB;0;MANITOU;Tractor loader backhaul;0;5,5;2 Ton;Mazowe;Magaya Mining;;208
+AFW1464;1MMS209;Tractor;0;Masey Fegurson;Tractor;0;0;7t-Tractor;Walden;Magaya Mining;;209
+0;2PAD210;Dozer;0;SHANTUI ;Dozer;0;0;SD22;Mazowe;Plant Africa;;210
+AGL4173;2MLT211;Tipper;0;Shacman;TIPPER TRUCK;0;2,2;20t-Tipper;Mazowe;Methusela;;211
+0;2MLT212;Tipper;0;Shacman;TIPPER TRUCK;0;2,2;20t-Tipper;Mazowe;Methusela;;212
+0;2MLG213;Grader;0;New Holland;Grader;0;0;Grader;Mazowe;Methusela;;213
+0;2MLT214;Tipper;0;Sino Truck;Water Bowser;0;2,2;20t-Tipper;Walden ;Methusela;;214
+AEZ4918;2MLJ215;TLB;0;Mahindra;Tractor loader backhaul;0;5,5;2 ton;Mazowe;Methusela;;215
+0;2MLC216;Compactor;0;SANY;Compactor;0;0;0;Walden;Methusela;;216
+AGJ4211;1MMP217;Pool;0;NISSAN;SUV;0;0;0;Walden;Magaya Mining;;217
+0;1MMP218;Pool;0;HONDA;Hatchback;0;0;0;Walden;Magaya Mining;;218
+0;2RAL219;Loader;0;XCGMA;Front end loader ;0;15;3 Ton ;Walden;Raventa;;219
+AGL7472;2MLS220;Tractor;0;Tandem ;Tractor;0;0;7t-Tractor;Walden;Methusela;;220
+0;2CRB221;Bus;0;Iveco;Staff Bus;0;0;65 seater;Walden;Crebal;;221
+0;2RAL222;Loader;0;XCGMA;Front end loader ;0;20;5 Ton ;Mazowe;Raventa;;222
+0;2MLS223;Tractor;0;John Deere;Tractor  ;0;0;7t-Tractor;Walden;Methusela;;223
+0;1MMP224;Pool;0;TOYOTA PRADO;SUV;0;0;0;Walden;Magaya Mining;;224
+0;1MMP225;Pool;0;ISUZU;KING CAB;0;0;0;Walden;Magaya Mining;;225
+AGZ4796;1MMP226;Pool;0;ISUZU;SINGLE CAB;0;0;0;Walden;Magaya Mining;;226
+0;1MMP227;Pool;0;ISUZU;SINGLE CAB;0;0;0;Walden;Magaya Mining;;227
+ADJ9009;2EGZ228;Excavator;0;HYUNDAI;Excavator;0;25,5;22 Ton;Mazowe;EG Construction ;;228
+ES EXCA 2;2EGZ229;Excavator;0;HYUNDAI 350LC;Excavator;0;25,5;22 Ton;Mazowe;EG Construction ;;229
+0;2EGE230;Fuel Tanker;0;IVECO STRALLIS;FUEL Tanker;0;0;0;Mazowe;EG Construction ;;230
+0;2EGR231;Fuel Bowser;0;0;FUEL BOWSER;0;0;0;Mazowe;EG Construction ;;231
+0;2EGD232;Dozer;0;XGMA;DOZER;0;0;0;Mazowe;EG Construction ;;232
+0;2PAZ233;Excavator;0;HYUANDAI;EXCAVATOR 19;0;25,5;22 Ton;Mazowe;Plant Africa;;233
+0;2PAZ234;Excavator;0;HYUANDAI;EXCAVATOR 20;0;25,5;22 Ton;Mazowe;Plant Africa;;234
+AGR3540 ;2PAW235;Water Bowser;0;0;Water Bowser;0;0;0;Mazowe;Plant Africa;;235
+0;2PAA236;Water Tank;0;0;Water Bowser;0;0;0;Mazowe;Plant Africa;;236
+AGR5547 ;2TCT237;Tipper;0;VOLVO;TIPPER TRUCK;0;2,2;0;Walden;Tenrai Consortium;;237
+AGR4466 ;2WTP238;Pool;0;UD90;TRUCK;0;0;10 Ton;Walden;Willo & TH Safety;;238
+AFJ 7622;2EST239;Tipper;0;HOWO;Tipper Truck;0;2,2;0;Walden;Earth Shift;;239
+AFQ 5086;2LRT240;Tipper;JHEY1EUK00010656;Sino Truck;Tipper Truck;0;2,2;20t-Tipper;Walden;Levante Resources;;240
+AGR5548 ;2EST241;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;241
+AGR5599;2EST242;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;242
+0;2EST243;Tipper;0;HOWO;HOWO;0;2,2;30t-Tipper;Walden;Earth Shift;;243
+AFQ 6875;2UEP244;Pool;0;UD CPB12;TRUCK;0;0;7 ton;Walden;Uptive Enterprises ;;244
+AGR4468 ;2ASS245;Tractor;0;Ford New Holland;Tractor ;0;0;5t-Tractor;Walden;All Solar Zim;;245
+EX16;2SCB246;Bus;B1024484;Yutong;Staff Bus;0;0;50 seater;Walden;Simlex Coach;;246
+0;2LRP247;Pool;0;HINO;TRUCK;0;0;5 Ton;Mazowe;Levante Resources;;247
+0;1MMX248;Generator;0;KIPOR;Generator;0;0;0;Mazowe;Magaya Mining;;248
+0;1MMX249;Generator;0;CUMMINS;Generator;0;0;110KVA;Mazowe;Magaya Mining;;249
+0;1MMX250;Generator;0;CUMMINS;Generator;0;0;375KVA;Mazowe;Magaya Mining;;250
+0;2EGO251;Other;0;FIORI;Concrete Mixer ;0;0;0;Mazowe;EG Construction ;;251
+AGL3426;2PAD252;Dozer;SD16AA118805 ;SHANTUI;Dozer;0;0;SD16;Mazowe;Plant Africa;;252
+0;2PAZ253;Excavator;WLH21545CZ0054719 ;LIEBHER;Excavator;0;25,5;22 Ton;Mazowe;Plant Africa;;253
+ADV 1135;2PAT254;Tipper;LBZF46GBKA000402;POWERSTAR;TIPPER TRUCK;0;2,2;20t-Tipper;Mazowe;Plant Africa;;254
+0;2PAT255;Tipper;LBZF46GB8CA019589;POWERSTAR;TIPPER TRUCK;0;2,2;20t-Tipper;Mazowe;Plant Africa;;255
+0;2PAG256;Grader;AG0014420;LIUGONG;Grader;0;0;Grader;Mazowe;Plant Africa;;256
+AGL7841;2PAC257;Compactor;SR19YD100114;SHANTUI;Compactor;0;0;14 Ton;Mazowe;Plant Africa;;257
+AGB 0961;2MLC258;Compactor;25V23A31193;SAKAI;Compactor;0;0;10 Ton;Mazowe;Methusela;;258
+AGL7796;2MLC259;Compactor;0;0;Plate Compactor ;0;0;100kgs;Mazowe;Methusela;;259
+0;2MLO260;Other;BX14M00535;FIORI;Concrete Mixer ;0;0;0;Mazowe;Methusela;;260
+AGJ2523;2MLZ261;Excavator;LL16015432;KOBELCO;Excavator;0;25,5;22 Ton;Mazowe;Methusela;;261
+AEX1105;2TLF262;Tellehandler;0;MANITOU;Telehandler ;0;4,5;4 Ton;Mazowe;TLS;;262
+AFJ 0550;1MMP263;Pool;AGN 6186 ;HINO;Truck ;0;0;5 Ton;Mazowe;Magaya Mining;;263
+AGJ 0504;2WSS264;Tractor;0;0;Tractor ;0;0;0;Mazowe;Weston;;264
+0;2SOJ265;TLB;0;CASE-3TON;Tractor Loader backhaul;0;5,5;3 Ton;Walden;Smac Construction;;265
+AGL6257;1MMM266;Motorbike;0;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;266
+AGJ3728;1MMM267;Motorbike; LUAHGKBLOP1000759 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;267
+AGZ4231;1MMM268;Motorbike; LUAHGKBLOP1000719 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;268
+0;1MMM269;Motorbike; LUAHGKBL1P1000809 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;269
+0;1MMM270;Motorbike; LUAHGKBL2P1000740 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;270
+AFQ6733;1MMM271;Motorbike; LUAHGKBLXP1000727 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Kadoma;Magaya Mining;;271
+PSA EX 13;1MMM272;Motorbike; LUAHGKBL4P1000822 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Kadoma;Magaya Mining;;272
+AGJ3269;1MMM273;Motorbike;R55PCJL80NHL89733 ;ATA125GY;Motor Bike;0;0;2 Wheeler;Kadoma;Magaya Mining;;273
+0;1MMM274;Motorbike;R55PCJL80NHL89690 ;ATA125GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;274
+AGJ 8663;1MMM275;Motorbike;LAEGAACJ4NN101164 ;TT Trail;Motor Bike;0;0;3 Wheeler;Chinhoyi;Magaya Mining;;275
+AGZ3145;1MMM276;Motorbike;LZSHDMZS3P022538 ;0;Motor Bike;0;0;3 Wheeler;Walden;Magaya Mining;;276
+0;1MMM277;Motorbike;0;RGR200ZH-CT;Motor Bike;0;0;3 Wheeler;Walden;Magaya Mining;;277
+ABC9187;1MMM278;Motorbike; LUAHGKBLXP1000808 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;278
+0;1MMM279;Motorbike; LUAHGKBL3P1000813 ;RGR150GY;Motor Bike;0;0;2 Wheeler;New Found;Magaya Mining;;279
+AAU 2694;1MMM280;Motorbike;0;ATA125GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;280
+0;1MMM281;Motorbike;0;ATA125GY;Motor Bike;0;0;2 Wheeler;Kadoma;Magaya Mining;;281
+ADY 2862;1MMM282;Motorbike;0;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton ;Magaya Mining;;282
+0;1MMM283;Motorbike;0;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton ;Magaya Mining;;283
+ACQ 1556;1MMM284;Motorbike; LGVSKY300RZ307069 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton ;Magaya Mining;;284
+0;1MMM285;Motorbike; LGVSKY3O8RZ307062 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton ;Magaya Mining;;285
+AHA0353;1MMM286;Motorbike; LGVSKY307RZ307134 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;286
+0;1MMM287;Motorbike; LGVSKY30XRZ307077 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;287
+0;1MMM288;Motorbike; LGVSKY303RZ307082 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton;Magaya Mining;;288
+0;1MMM289;Motorbike; LGVSKY301RZ307016 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;289
+0;1MMM290;Motorbike; LGVSKY309RZ307085 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;290
+0;1MMM291;Motorbike; LGVSKY302RZ307042 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton;Magaya Mining;;291
+AGH 7187;1MMM292;Motorbike; LGVSKY301RZ307064 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;292
+0;1MMM293;Motorbike; LGVSKY307RZ307084 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Chanton;Magaya Mining;;293
+0;1MMM294;Motorbike; LGVSKY305RZ307133 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;294
+ADV1133;1MMM295;Motorbike; LGVSKY304RZ307057 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;295
+0;1MMM296;Motorbike; LGVSKY302RZ307056 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;296
+0;1MMM297;Motorbike; LGVSKY300RZ307055 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;297
+0;1MMM298;Motorbike; LGVSKY306RZ307061 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;298
+PSA EX 14;1MMM299;Motorbike; LGVSKY303RZ307101 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;299
+0;1MMM300;Motorbike; LGVSKY306RZ307108 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;300
+AEU 0071 ;1MMM301;Motorbike; LGVSKY301RZ307114 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Walden;Magaya Mining;;301
+0;1MMM302;Motorbike; LUAHGKBL1R1000778 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Mazowe;Magaya Mining;;302
+AGR3846 ;1MMM303;Motorbike; LUAHGKBL8R1000843 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Mazowe;Magaya Mining;;303
+5546;1MMM304;Motorbike; LUAHGKBL9R1000592 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Mazowe;Magaya Mining;;304
+0;1MMM305;Motorbike; LUAHGKBL6R1000615 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Mazowe;Magaya Mining;;305
+0;1MMM306;Motorbike; LUAHGKBL1R1000652 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Mazowe;Magaya Mining;;306
+0;1MMM307;Motorbike; LZSHCKZS5P8027764 ;RGR150GY;Motor Bike;0;0;2 Wheeler;Mazowe;Magaya Mining;;307
+AGJ0614;2BDT308;Tipper;0;SCANIA;Tipper;0;2,2;20t-Tipper;Walden;Buenos  Dias Logistics;;308
+AGR3845 ;2MLL309;Loader;0;Wulf Renoster ;Front End Loader ;0;15;3 Ton ;Walden;Methusela;;309
+AGL0703;2RAJ310;TLB;XC270HK;XCMG;Tractor loader backhaul ;0;5,5;3 Ton;Mazowe;Raventa;;310
+0;2MAP311;Pool;0;TOYOTA DYNA;Truck ;0;0;3 Ton;Walden;M.Masoha;;311
+0;2CCZ312;Excavator;WHZ1545HZD050479;LIEBHER;Excavator;0;25,5;22 Ton;Walden;Connect Cut;;312
+0;1MMM313;Motorbike;LGVSMH105PZ231097;SKM ;Motor Bike;0;0;3Wheeler;Walden;Magaya Mining;;313
+0;1MMM314;Motorbike;LGVSKY309PZY22259;SKM SK150GY;Motor Bike;0;0;2Wheeler;Walden;Magaya Mining;;314
+0;1MMM315;Motorbike;LGVSKY301PZY22269;SKM SK150GY;Motor Bike;0;0;2Wheeler;Walden;Magaya Mining;;315
+AFJ 0549;1MMM316;Motorbike;LGVSKY307PZY22244;SKM SK150GY;Motor Bike;0;0;2Wheeler;Walden;Magaya Mining;;316
+0;1MMM317;Motorbike;LGVSKY303PZY22225;SKM SK150GY;Motor Bike;0;0;2Wheeler;Walden;Magaya Mining;;317
+AGJ 3819;1MMM318;Motorbike;SK2380100012;SKM 200ZH;Motor Bike;0;0;3Wheeler;Zowa;Magaya Mining;;318
+AJG0498;2EGC319;Compactor;CXG0614HK0050119;XCMG;Compactor ;0;0;Vibratory Roller;Walden;EG Construction ;;319
+AEC2357;2RIL320;Loader;H4C2CB1X1A503T;LOVOL;Front End loader ;0;15;3 Ton ;Walden;Rodam Incorporated ;;320
+0;2CCS321;Tractor;0;New Holland ;Tractor  ;0;0;7t-Tractor;Walden;Connect Cut;;321
+0;2GCT322;Tipper;0;Volvo ;Tipper;0;2,2;20t-Tipper;Walden;Gullifford Contractors ;;322
+AFJ 6515;2GCT323;Tipper;0;Volvo ;Tipper;0;2,2;20t-Tipper;Walden;Gullifford Contractors ;;323
+AGZ4796;2MKW324;Water Bowser;0;Daf ;Bowser ;0;0;20000L;Walden;Makuku Logistics;;324
+AGJ3270;2CCL325;Loader;0;0;Front End Loader ;0;15;3 Ton ;Walden;Connect Cut;;325
+AGJ9715;2TIT326;Tipper;0;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Walden;Thinkstock Investments Pvt Ltd;;326
+AGZ0921;2MLJ327;TLB;0;Mahindra;Tractor loader backhaul ;0;5,5;3 Ton;Mazowe;Methusela;;327
+AGZ4343;2YIL328;Loader;0;SDLG;Front End Loader ;0;20;5 Ton ;Walden;Yingcan Investments ;;328
+AGJ0612;2RAZ329;Excavator;0;Hyundai;Excavator;0;25,5;22 Ton;Mazowe;Raventa;;329
+0;2MLW330;Water Bowser;ZZ5ELSD0HN294361;HOWO;BOWSER ;0;0;20 Ton;Walden;Methusela;;330
+AGL7795;2MLD331;Dozer;9LK00774;CAT;Dozer ;0;0;24 Ton;Mazowe;Methusela;;331
+AGZ 6192;2PAZ332;Excavator;0;LIEBHER;Excavator;0;25,5;22 Ton;Mazowe;Plant Africa;;332
+AGJ0615;2PAZ333;Excavator;0;Shantui ;Excavator;0;25,5;22 Ton;Mazowe;Plant Africa;;333
+AGL2202;2PAW334;Water Bowser;0;UD 95;Bowser;0;0;10 000L;Mazowe;Plant Africa;;334
+0;2ATS335;Tractor; F5123292 ;FIAT ;Tractor  ;0;0;5t-Tractor;Walden;Alpha Transport;;335
+0;2PAL336;Loader;0;0;Front End Loader ;0;20;5 Ton;Mazowe;Plant Africa;;336
+0;2EGH337;Lighting Tower;0;0;lighting tower;0;0;0;Mazowe;EG Construction ;;337
+0;2EGH338;Lighting Tower;0;0;lighting tower;0;0;0;Mazowe;EG Construction ;;338
+0;2BRI339;Crane Truck;0;Mercedes Benz Atego;Crane Truck ;0;0;0;Mazowe;Bretlands;;339
+AFQ7103;2KCT340;Tipper;LZZ5EXSC5LN678936;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Mazowe;Kiwi Carter;;340
+0;2KCT342;Tipper;LZZ5EXSC7LN678937;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Mazowe;Kiwi Carter;;342
+0;2KCT343;Tipper;LZZ5DLSD1PA128084;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Mazowe;Kiwi Carter;;343
+AGL6351;2KCT344;Tipper;LZZ5DLSD4PM046116;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Mazowe;Kiwi Carter;;344
+0;2KCT345;Tipper;LZZ5DLSDXPA128083;HOWO;TIPPER TRUCK;0;2,2;30t-Tipper;Mazowe;Kiwi Carter;;345
+0;2ZET346;Tipper;LZGJLDR42PX081568;Shacman;TIPPER TRUCK;0;2,2;20t-Tipper;Chanton ;Zim Earth;;346
+AGQ 3880;2ZET347;Tipper;LZZ5ELND8JN398096;HOWO;TIPPER TRUCK;0;2,2;20t-Tipper;Chanton;Zim Earth;;347
+0;2AAT348;Tipper;YV2JSG07A629708;Volvo ;Tipper;0;2,2;20t-Tipper;Walden;Auto Trans;;348
+0;2CCS349;Tractor;BSWDK1255889MS;SONAITEK;Tractor  ;0;0;7t-Tractor;Walden;Connect Cut;;349
+0;2AAT350;Tipper;YV2JSG07A7141511;Volvo ;Tipper;0;2,2;20t-Tipper;Walden;Auto Trans;;350
+0;2PAZ351;Excavator;WLH21545HZD055214;LIEBHER 920;Excavator;0;25,5;20 Ton;Mazowe;Plant Africa;;351
+0;2RAZ352;Excavator;VCEC200DA00280844;Volvo;Excavator;0;25,5;20 Ton;Mazowe;Raventa;;352
+0;2AAT353;Tipper;YV2SJSG07165874;Volvo;Tipper;0;2,2;20t-Tipper;Walden;Auto Trans;;353
+0;2LLT354;Tipper;WDF9423072B956058;Mercedes Benz ;Tipper;0;2,2;20t-Tipper;Walden;Latidoux Logistics ;;354
+0;2LLT355;Tipper;XLEP85150917;Scania;Tipper;0;2,2;20t-Tipper;Walden;Latidoux Logistics ;;355
+0;2LLT356;Tipper;XLEP5130033;Scania;Tipper;0;2,2;20t-Tipper;Walden;Latidoux Logistics ;;356
+0;2TLF358;Tellehandler;TEP1740PP01121764;MANITOU;Forklift ;0;4,5;4 Ton;Walden;TLS;;358
+AGL9344;2JJIT359;Tipper;FM7146354;Volvo;Tipper;0;2,2;20t-Tipper;Walden;JJG International Trucks ;;359
+AGL7328;1MMM360;Motorbike;0;SKM;Motor Bike;0;0;0;Mazowe;Magaya Mining;;360
+0;2PAZ361;Excavator;LGC920EZPLC120716;LIUGONG;Excavator;0;25,5;22 Ton;Walden;Plant Africa;;361
+0;2PAZ362;Excavator;GLG920EZLLE089886;LIUGONG;Excavator;0;25,5;22 Ton;Walden;Plant Africa;;362
+0;1MMX363;Generator;0;VOLVO PENTA;Generator ;0;0;200KVA;Walden New  Mills;Magaya Mining;;363
+0;1MMX364;Generator;0;TIDE POWER;Generator ;0;0;500KVA;Walden CIP Ball Mills;Magaya Mining;;364
+0;1MMX365;Generator;0;TIDE POWER;Generator ;0;0;721KVA;Walden CIP Elution;Magaya Mining;;365
+0;1MMX366;Generator;0;DETROIT;Generator ;0;0;500KVA;Walden New Mills (b/down);Magaya Mining;;366
+AGZ7345;2ESZ367;Excavator;XUGA2251CMKA00589;XCMG;Excavator;0;25,5;22 Ton;Walden;Earth Shift;;367
+0;2ESJ368;TLB;CLG777AZCRC506338;LIUGONG;TLB;0;5,5;3 Ton;Walden;Earth Shift;;368
+0;2TIL369;Loader;CLGZL50CERL833037;LIUGONG;Loader;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;369
+AGL7332;2MIT370;Tipper;0;0;TIPPER TRUCK;0;2,2;0;Mazowe;Motsione Innovations;;370
+0;2MIT371;Tipper;0;0;TIPPER TRUCK;0;2,2;0;Mazowe;Motsione Innovations;;371
+AGL6137;1MMM372;Motorbike;LUAHGKBL8R1000700;SKM;Motor Bike;0;0;0;Mazowe;Magaya Mining;;372
+0;1MMX373;Generator;0;BLUETEK;Generator;0;0;60KVA;Chanton;Magaya Mining;;373
+AGZ7346;1MMM374;Motorbike;0;SKM;Motor Bike;0;0;0;0;Magaya Mining;;374
+0;1MMX375;Generator;0;VOLVO;Generator;0;0;0;Chanton;Magaya Mining;;375
+AGJ1897;1MMM376;Motorbike;0;SKM;Motor Bike;0;0;0;0;Magaya Mining;;376
+0;1MMP377;Pool;0;MAZDA;SUV;0;0;0;Harare;Magaya Mining;;377
+0;1MMM378;Motorbike;0;SKM;Motor Bike;0;0;0;0;Magaya Mining;;378
+0;1MMP379;Pool;0;TOYOTA;KING CAB;0;0;0;Walden;Magaya Mining;;379
+0;1MMM380;Motorbike;0;SKM;Motor Bike;0;0;0;0;Magaya Mining;;380
+0;2CCL381;Loader;KO17DG1B;Shantui ;Front End loader ;0;15;2 Ton;0;Connect Cut;;381
+0;2GCT382;Tipper;0;Volvo ;Tipper;0;2,2;20t-Tipper;Walden;Gullifford Contractors ;;382
+AHH7451;2CRB383;Bus;9BSF4X20003811626/201210SC0104;Scania;0;0;0;0;Walden;Crebal;;383
+0;3MMX384;Generator;220922154;0;1100 Generator;0;0;1100;Kaltranic;Magaya Mining;;384
+0;3MMX385;Generator;22081378;0;1100 Generator;0;0;1100;Cornsnow;Magaya Mining;;385
+0;3MMX386;Generator;5007800;0;1100 Generator;0;0;1100;Zowa Plant;Magaya Mining;;386
+0;3MMX387;Generator;22081388;0;1100 Generator;0;0;1100;Village 10 Zowa;Magaya Mining;;387
+0;3MMX388;Generator;0;0;1125 Generator;0;0;1125;Mhangura;Magaya Mining;;388
+0;3MMX389;Generator;202203026;0;10kw Generator ;0;0;10kw;Blue Rock Area C;Magaya Mining;;389
+0;3MMX390;Generator;220922154;0;10kw Generator ;0;0;10kw;Royal Bucks;Magaya Mining;;390
+0;3MMX391;Generator;0;0;10kw Generator ;0;0;10kw;Royal Bucks;Magaya Mining;;391
+AGZ7342;3MMX392;Generator;20211036106/233;0;10kw Generator 1110;0;0;10kw 1110;New Found Area;Magaya Mining;;392
+0;3MMX393;Generator;202311710/233;0;10kw Generator 1110;0;0;10kw 1111;New Found Area;Magaya Mining;;393
+0;3MMX394;Generator;S/N93158483;0;110kw Generator ;0;0;110kw;Giant Area G;Magaya Mining;;394
+0;3MMX395;Generator;20201275/500375;0;12kw Generator ;0;0;12kw;Ruvengo;Magaya Mining;;395
+AGL7331;3MMX396;Generator;201976/95321506;0;12kw Generator ;0;0;12kw;Red Hat;Magaya Mining;;396
+0;3MMX397;Generator;202108037;0;12kw Generator ;0;0;12kw;Blue Rock Area C;Magaya Mining;;397
+0;3MMX398;Generator;5007077;0;12kw Generator ;0;0;12kw;Blue Rock Main Shaft;Magaya Mining;;398
+0;3MMX399;Generator;320100331;0;150kw Generator ;0;0;150kw;Starlin ;Magaya Mining;;399
+AFJ 3106;3MMX400;Generator;0;0;150kw Generator ;0;0;150kw;Giant    ;Magaya Mining;;400
+0;3MMX401;Generator;22081229;0;15kw Generator;0;0;15kw ;Royal Bucks;Magaya Mining;;401
+AGL9359;3MMX402;Generator;202203043;0;15kw Generator;0;0;15kw ;Blue Rock Main Shaft;Magaya Mining;;402
+AHE1194;3MMX403;Generator;202108189;0;15kw Generator A;0;0;15kw ;Eiffel Flats;Magaya Mining;;403
+AHE1060;3MMX404;Generator;202108163;0;15kw Generator B;0;0;15kw ;Eiffel Flats;Magaya Mining;;404
+AGL7837;3MMX405;Generator;A9FY1M31386;0;165kw Generator ;0;0;165kw;Iron North;Magaya Mining;;405
+AHA21100;3MMX406;Generator;MKLEBM02207;0;200kw Generator;0;0;200kw;Mamillion;Magaya Mining;;406
+AGJ8662;3MMX407;Generator;20201341;0;20kw Generator;0;0;20kw;Ministry;Magaya Mining;;407
+0;3MMX408;Generator;202203100;0;20kw Generator;0;0;20kw;Ruvengo;Magaya Mining;;408
+0;3MMX409;Generator;2022081350;0;20kw Generator;0;0;20kw;Giant Area A;Magaya Mining;;409
+AGL 4248;3MMX410;Generator;2009611;0;20kw Generator;0;0;20kw;Royal Bucks;Magaya Mining;;410
+AGL7508;3MMX411;Generator;22081354;0;20kw Generator;0;0;20kw;Royal Bucks;Magaya Mining;;411
+0;3MMX412;Generator;0;0;20kw Generator;0;0;20kw;Alabama;Magaya Mining;;412
+AHE 0428;3MMX413;Generator;93151952;0;220 kw Generator ;0;0;220kw;Mamillion;Magaya Mining;;413
+0;3MMX414;Generator;202208132/2208;0;24kw Generator ;0;0;24kw ;Warrior;Magaya Mining;;414
+AFJ 0613;3MMX415;Generator;5006127;0;24kw Generator ;0;0;24kw ;Royal Bucks;Magaya Mining;;415
+0;3MMX416;Generator;0;0;24kw Generator ;0;0;24kw ;Alabama;Magaya Mining;;416
+0;3MMX417;Generator;202311869;0;24kw Generator ;0;0;24kw ;Royal Bucks;Magaya Mining;;417
+AGJ8665;3MMX418;Generator;BY202401201/220;0;30kw Generator ;0;0;30kw ;Blanket Mine;Magaya Mining;;418
+AGZ6536;3MMX419;Generator;0;0;5.5kw Petrol Generator;0;0;5.5kw Petrol;Mamillion;Magaya Mining;;419
+AGL 7651;3MMX420;Generator;0;0;5.5kw Petrol Generator;0;0;5.5kw Petrol;Mamillion;Magaya Mining;;420
+AGZ6339;3MMX421;Generator;0;0;5.5kw Petrol Generator;0;0;5.5kw Petrol;Mamillion;Magaya Mining;;421
+0;3MMX422;Generator;0;0;5.5kw Petrol Generator;0;0;5.5kw Petrol;Mamillion;Magaya Mining;;422
+AGL9360;3MMX423;Generator;0;0;50kw Generator;0;0;50kw ;Bossbury;Magaya Mining;;423
+AGL 5205;3MMX424;Generator;0;0;50kw Generator;0;0;50kw ;Mhangura ;Magaya Mining;;424
+0;3MMX425;Generator;10180822;0;50kw Generator;0;0;50kw ;Giant;Magaya Mining;;425
+AGZ 7276;3MMX426;Generator;0;0;6.5kw Generator A;0;0;6.5kw;Concession Hill;Magaya Mining;;426
+0;3MMX427;Generator;0;0;6.5kw Generator B;0;0;6.5kw;Concession Hill;Magaya Mining;;427
+AHF4219;3MMX428;Generator;0;0;6.5kw Generator C;0;0;6.5kw;Concession Hill;Magaya Mining;;428
+AHE 0274;3MMX429;Generator;0;0;6.5kw Generator D;0;0;6.5kw;Concession Hill;Magaya Mining;;429
+0;3MMX430;Generator;0;0;60kw Generator ;0;0;60kw;Mhangura ;Magaya Mining;;430
+AHA 3269;3MMX431;Generator;BY202205425;0;60kw Generator ;0;0;60kw;Alabama;Magaya Mining;;431
+AGL7510;3MMX432;Generator;0;0;7.5kw Petrol Generator;0;0;7.5kw;Mamillion Extension;Magaya Mining;;432
+0;3MMX433;Generator;0;0;7.5kw Petrol Generator;0;0;7.5kw;Mamillion Extension A;Magaya Mining;;433
+AGL9363;3MMX434;Generator;0;0;7.5kw Petrol Generator;0;0;7.5kw;Mamillion Extension A;Magaya Mining;;434
+0;3MMX435;Generator;0;0;7.5kw Petrol Generator A;0;0;7.5kw;Concession Hill;Magaya Mining;;435
+AGZ 2308;3MMX436;Generator;0;0;7.5kw Petrol Generator B;0;0;7.5kw;Concession Hill;Magaya Mining;;436
+0;3MMX437;Generator;0;0;7.5kw Petrol Generator C;0;0;7.5kw;Concession Hill;Magaya Mining;;437
+AGL9362;3MMX438;Generator;0;0;7.5kw Petrol Generator D;0;0;7.5kw;Concession Hill;Magaya Mining;;438
+AGZ7344;3MMX439;Generator;0;0;7.5kw Petrol Generator E;0;0;7.5kw;Concession Hill;Magaya Mining;;439
+0;3MMX440;Generator;0;0;7.5kw Petrol Generator F;0;0;7.5kw;Concession Hill;Magaya Mining;;440
+AFJ 3105;3MMX441;Generator;0;0;7.5kw Petrol Generator G;0;0;7.5kw;Concession Hill;Magaya Mining;;441
+0;3MMX442;Generator;0;0;7.5kw Petrol Generator H;0;0;7.5kw;Concession Hill;Magaya Mining;;442
+AGZ6494;3MMX443;Generator;0;0;7.5kw Petrol Generator I;0;0;7.5kw;Concession Hill;Magaya Mining;;443
+AGZ7343;3MMX444;Generator;0;0;7.5kw Petrol Generator J;0;0;7.5kw;Concession Hill;Magaya Mining;;444
+AGZ 4977;3MMX445;Generator;1S083960;0;110kw Generator ;0;0;110kw;Elvington Sampling Lab;Magaya Mining;;445
+0;3MMQ446;Compressor;31151098;0;Mobile Atlas Copco Compressor;0;0;Mobile Atlas;Mayellow;Magaya Mining;;446
+AGZ 0753;3MMQ447;Compressor;31151000;0;Mobile Atlas Compressor;0;0;Mobile Atlas;Giant Area A;Magaya Mining;;447
+AGL9361;3MMQ448;Compressor;A/15290/4;0;Mobile ATA Compressor;0;0;Mobile ATA;Giant Area B;Magaya Mining;;448
+AHA 3268;3MMQ449;Compressor;A15290/4;0;Mobile ATA Compressor;0;0;Mobile ATA;Giant Area C;Magaya Mining;;449
+0;3MMQ450;Compressor;A15290/2;0;Mobile ATA Compressor;0;0;Mobile ATA;Giant Area D;Magaya Mining;;450
+AHF8672;3MMQ451;Compressor;1S01585G;0;Mobile Atlas Copco Compressor;0;0;Mobile Atlas;Mamillion;Magaya Mining;;451
+0;3MMQ452;Compressor;25006191/R050620;0;Mobile Ingersol-rand Compressor;0;0;Mobile Ingersol-rand;Royal Bucks;Magaya Mining;;452
+AFQ2489;3MMQ453;Compressor;A15290/3;0;Mobile ATA Compressor;0;0;Mobile ATA;Chanton;Magaya Mining;;453
+0;3MMQ454;Compressor;ALA0327036;0;Mobile Atlas Compressor;0;0;Mobile Atlas;Concession Hill;Magaya Mining;;454
+AGZ 2855;3MMQ455;Compressor;0;0;Mobile ATA Compressor;0;0;Mobile ATA;Blanket Mine;Magaya Mining;;455
+AGZ3635;3MMQ456;Compressor;0;0;Mobile ATA Compressor;0;0;Mobile ATA;Blanket Mine;Magaya Mining;;456
+AGZ 2635;3MMQ457;Compressor;0;0;Mobile ATA Compressor;0;0;Mobile ATA;Mhangura ;Magaya Mining;;457
+AGJ 1472;3MMQ458;Compressor;SCZP260SDXY512522;0;Mobile Ingersol-rand Compressor;0;0;Mobile Ingersol-rand;Giant Area B;Magaya Mining;;458
+0;3MMQ459;Compressor;0;0;Mobile Atlas Copco Compressor;0;0;Mobile Atlas;Chegutu;Magaya Mining;;459
+AGJ 1467;3MMQ460;Compressor;0;0;Mobile Ingersol-rand Compressor;0;0;Mobile Inger-solrand;Chegutu;Magaya Mining;;460
+AGZ5540;3MMQ461;Compressor;0;0;Mobile Ingersol-rand Compressor;0;0;Mobile Inger-solrand;Chegutu;Magaya Mining;;461
+AGZ4050;3MMQ462;Compressor;0;0;Mobile Deutz Compressor;0;0;Mobile Deutz;Chegutu;Magaya Mining;;462
+0;2WTP463;Pool;0;UD90;UD Truck;0;0;8 Ton;Walden;Willo & TH Safety;;463
+AGZ5541;2MLS464;Tractor;NH1713523;New Holland ;Tractor ;0;0;7t-Tractor;Mazowe;Methusela;;464
+0;2PAZ465;Excavator;0;Komatsu;Excavator ;0;25,5;22 Ton;Mazowe ;Plant Africa;;465
+ABG 6370;2SOJ466;TLB;NKJ0570VEPKH36308;CASE;Tractor loader backhoe;0;5,5;2 Ton;Mhangura;Smac Construction;;466
+0;2RAL467;Loader;XCG00955CJH0682;XCGM;Front End loader ;0;20;5 Ton;Mazowe ;Raventa;;467
+AGZ4049;2RAL468;Loader;XCG00955LJ0H00833;XCGM;Front End loader ;0;20;5 Ton;Mazowe;Raventa;;468
+0;2DST469;Tipper;LZZ5DLSD1PA230498;HOWO;Tipper;0;2,2;20t-Tipper;Walden ;Deepsea Systems ;;469
+0;2PAT470;Tipper;0;TORU;Tipper;0;2,2;20t-Tipper;Mazowe;Plant Africa;;470
+AGZ 2317;2PAT471;Tipper;0;TORU;Tipper;0;2,2;20t-Tipper;MAZOWE;Plant Africa;;471
+0;2BRG472;Grader;0;4722BRG472;Grader;0;0;Grader;MAZOWE;Bretlands;;472
+0;2KHT473;Tipper;D1309228;DAF;Tipper;0;2,2;20t-Tipper;Walden;Kan Horizon ;;473
+0;2SMP474;Pool;ADN55400000001550;UD 40;UD Truck;0;0;4 Ton;Walden;Saymore Machoni;;474
+0;2CRB475;Bus;0;Hino Dutro ;Bus;0;0;35 Seater ;Walden ;Crebal;;475
+0;1MMX476;Generator;UGY250KK24004031121;Cummins ;Generator ;0;0;250KVA;BT Mills;Magaya Mining;;476
+0;1MMX477;Generator;0;0;Generator;0;0;150KVA;Stalin ;Magaya Mining;;477
+0;1MMX478;Generator;0;0;Generator;0;0;150KVA;Chanton ;Magaya Mining;;478
+0;2KPT479;Tipper;XLEP8X40005191475;SCANIA;Tipper ;0;2,2;20t-Tipper;Walden ;Kanevate Private Limited ;;479
+0;2KPT480;Tipper;XLEP8X40005198801;SCANIA;Tipper;0;2,2;20t-Tipper;Walden;Kanevate Private Limited ;;480
+AGJ0497;2YIL481;Loader;VLGL956FCR0626278;SDLG;Loader;0;20;5 Ton ;Walden;Yingcan Investments ;;481
+AFQ9460;2MST482;Tipper;0;0;Tipper;0;2,2;20t-Tipper;Walden;Mount Solid;;482
+0;2RIL483;Loader;WD10G220F23;SDLG;front end loader ;0;20;5 Ton ;Walden ;Rodam Incorporated ;;483
+AGP0205;2VES484;Tractor;TA704-1F161H9K-0H2;Europard 704;tractor ;0;0;5t-Tractor;Walden;Vicemode Engineering;;484
+0;1MMX485;Generator;0;Baldwin;Generator ;0;0;500KVA;Walden CIP Genset Farm ;Magaya Mining;;485
+AGZ 2914;2CCT486;Tipper;LBZF59JA7AA063871;Powerstar;Tipper ;0;2,2;15t-Tipper;Walden ;Connect Cut;;486
+AGZ3866;2MEZ487;Excavator;WLH21545KZD055236;Liebherr 920;Excavator ;0;25,5;22 Ton;Walden;Millantus Enterprises ;;487
+ACZ1850;2TIL488;Loader;LSH050HCTRA804428;Lonking;Loader ;0;20;5 Ton ;Walden ;Thinkstock Investments Pvt Ltd;;488
+AGZ4299;2MLL489;Loader;XUG0050GINCB08042;XCMG;Loader ;0;20;5 Ton ;Walden;Methusela;;489
+AGJ1898;2KHT490;Tipper;0;Volvo;Tipper;0;2,2;20t-Tipper;Amatola;Kan Horizon ;;490
+AGZ4300;2KHT491;Tipper;0;0;Tipper;0;2,2;20t-Tipper;Amatola;Kan Horizon ;;491
+0;1MMP492;Pool;0;Toyota ;Pick up ;0;0;1 ton ;Harare;Magaya Mining;;492
+AGL7797;1MMM493;Motorbike;ENG # 0217694;SKM;Motorbike ;0;0;0;Harare;Magaya Mining;;493
+AFQ6606;1MMY494;Tri-Cycle;0;RGR;Tri-Cycle;0;0;0;Amatola;Magaya Mining;;494
+0;1MMY495;Tri-Cycle;0;RGR;Tri-Cycle;0;0;0;Amatola;Magaya Mining;;495
+AGZ4795;2BIT496;Tipper;XLRAD85MCOE769576;DAF;Tipper;0;2,2;20t-Tipper;Walden;Bobo Investments;;496
+AGJ8664;2MLS497;Tractor;0;Tandem Hauler;Tractor;0;0;16t-Tractor;Walden;Methusela;;497
+0;2RAL498;Loader;XUG0300KEPCB15969;XCGM;Loader;0;15;3 Ton;Mazowe;Raventa;;498
+0;2RAL499;Loader;0;0;Loader;0;15;3 Ton;Amatola;Raventa;;499
+0;2RAJ500;TLB;0;Mahindra;TLB;0;5,5;3 Ton;Amatola;Raventa;;500
+AGL 4577;2PAL501;Loader;0;0;Loader;0;15;3 Ton;Amatola;Plant Africa;;501
+0;2PAZ502;Excavator;0;0;Excavator;0;25,5;22 Ton;Amatola;Plant Africa;;502
+0;2RAL503;Loader;0;0;Loader;0;15;3 Ton;Amatola;Raventa;;503
+0;2PAT504;Tipper;0;Volvo;Tipper Grabber;0;2,2;20t-Tipper;Amatola;Plant Africa;;504
+0;2SDP505;Pool;0;Nisan;Pick up ;0;0;1 ton;Amatola;SMD;;505
+0;2BRB506;Bus;0;Toyota;Bus;0;0;22 seater;Amatola;Bretlands;;506
+0;2LRP507;Pool;0;Hino;5 tonne truck;0;0;5 ton;Amatola;Levante Resources;;507
+0;2JSP508;Pool;0;Hino;5 tonne truck;0;0;5 ton ;Amatola;Jesmain;;508
+0;2MLJ509;TLB;MDZCJ4BEAR6050335;Mahindra;3 ton TLB ;0;5,5;3 Ton ;Amatola;Methusela;;509
+0;2MLJ510;TLB;MDZCJ4BEKR6050331;Mahindra;3 ton TLB ;0;5,5;3 Ton ;Amatola;Methusela;;510
+AGL6357;2BRS511;Tractor;0;Massey Ferguson;Tractor;0;0;80hp;Amatola;Bretlands;;511
+0;2MLZ512;Excavator;0;KOBELCO;Excavator;0;25,5;22 Ton;Amatola;Methusela;;512
+AFQ2248;2RAL513;Loader;0;0;Loader;0;20;5 Ton;Amatola;Raventa;;513
+AGL7838;2EGG515;Grader;0;John Deere;Grader;0;0;Grader;Amatola;EG Construction ;;515
+AGJ3699;2PAT516;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;516
+AFQ5410;2PAT517;Tipper;0;DAF;Tipper Grabber;0;2,2;20t-Tipper;Amatola;Plant Africa;;517
+AGL0422;2BRS518;Tractor;0;Maccomick;Tractor;0;0;80hp;Amatola;Bretlands;;518
+AGJ9716;2BRS519;Tractor;0;Newholland;Tractor;0;0;120hp;Amatola;Bretlands;;519
+0;2LRT520;Grabber;YV2JSGOG47B481766;VOLVO;Tipper/Grabber ;0;0;20t-Tipper;Walden;Levante Resources;;520
+0;2LRT521;Tipper;JHEFYIEUK0001494;HINO;Tipper;0;2,2;20t-Tipper;Walden;Levante Resources;;521
+0;2LRT522;Grabber;JHEFYIEUK0001762;HINO;Tipper/Grabber ;0;0;20t-Tipper;Walden;Levante Resources;;522
+AGL 2674;2RAT523;Tipper;0;Shacman;Tipper;0;2,2;25t-Tipper;Amatola;Raventa;;523
+AGL4078;2RAT524;Tipper;0;Shacman;Tipper;0;2,2;25t-Tipper;Amatola;Raventa;;524
+LTS4K;2RAL525;Loader;0;XMG ;Loader;0;20;5 Ton;Amatola;Raventa;;525
+0;2RAL526;Loader;0;XCMGKW300;Loader;0;15;3 Ton;Amatola;Raventa;;526
+0;2PAZ527;Excavator;66SE22DKNR1020139;Shantui;Excavator;0;3;2.2 Ton ;Amatola;Plant Africa;;527
+0;2PAL528;Loader;0;Shantui;Loader;0;15;3 Ton ;Amatola;Plant Africa;;528
+AGD7145;2MLS529;Tractor;NH1710234;0;Tractor;0;0;7t-Tractor;Walden;Methusela;;529
+0;2PAL530;Loader;86SLA58KNRB001209;Shantui;Loader;0;20;5.5 Ton;Amatola;Plant Africa;;530
+AGJ7380;2RAL531;Loader;0;0;Loader;0;20;5 Ton ;Amatola;Raventa;;531
+0;2RAL532;Loader;86SL50L3NMN013816;Shantui;Loader;0;20;5 Ton;Mazowe;Raventa;;532
+AGL 5763;1MMX533;Generator;B5147766;DETROIT;Generator;0;0;550 kVA;Walden Milling;Magaya Mining;;533
+0;2MLT534;Tipper;LZZ5ELSD5MN678369;HOWO;Tipper;0;2,2;20t-Tipper;Walden;Methusela;;534
+0;2BRB535;Bus;0;Toyota Coaster;Bus;0;0;22 seater;Amatola;Bretlands;;535
+AGR 3486;2BRS536;Tractor;0;MF;Tractor;0;0;80hp;Mazowe;Bretlands;;536
+AGR5908 ;2PAC537;Compactor;0;Sany;Compactor;0;0;19ton;Mazowe;Plant Africa;;537
+0;2RAT538;Tipper;0;Shacman;Tipper;0;2,2;40t-Tipper;Amatola;Raventa;;538
+0;2RAT539;Tipper;0;Shacman;Tipper;0;2,2;40t-Tipper;Amatola;Raventa;;539
+0;2EGH540;Lighting Tower;18202015;Neuson;lighting tower;0;0;0;Mazowe;EG Construction ;;540
+0;2EGH541;Lighting Tower;18202004;Neuson ;lighting tower;0;0;0;Mazowe;EG Construction ;;541
+AGR4547 ;2MLT542;Tipper;LZGJRDT69RX084527;Shacman;Tipper;0;2,2;30t-Tipper;Walden;Methusela;;542
+AGL 3682;2MLT543;Tipper;LZGJRDT62RX084532;Shacman;Tipper;0;2,2;30t-Tipper;Walden;Methusela;;543
+AFJ 0873;2KHT544;Tipper;XLRAD85MC0E920377;DAF;Tipper;0;2,2;20t-Tipper;Walden;Kan Horizon ;;544
+AFJ 2893;2MLS545;Tractor;ANANTT49R4RN008547;New Holland;Tractor;0;0;7t-Tractor;Walden;Methusela;;545
+AGJ0603;2RAT546;Tipper;0;Shacman;Tipper ;0;2,2;20t-Tipper;Amatola;Raventa;;546
+AGJ 9458;2PAT547;Tipper;0;Shacman;Tipper;0;2,2;20t-Tipper;Amatola;Plant Africa;;547
+AGR4545 ;2PAT548;Tipper;0;Shacman;Tipper;0;2,2;20t-Tipper;Amatola;Plant Africa;;548
+AGP9930;2RAT549;Tipper;0;Shacman ;Tipper ;0;2,2;40t-Tipper;Amatola;Raventa;;549
+0;2SCB550;Bus;LDY4GL3B6N0025669;Zhongtong;Staff Bus;0;0;75 Seater;Walden;Simlex Coach;;550
+0;2SCB551;Bus;LDY4GL3B6P003210;Zhongtong;Staff Bus;0;0;75 Seater;Walden;Simlex Coach;;551
+AGL 3678;2NTP552;Pool;ZW4WEL4GMY104008;Mazda;Mazda T35;0;0;Mazda T35;Walden;NT Transport;;552
+0;2PAL553;Loader;VLGL955FEN0638105;SDGM;Loader;0;20;5 Ton ;Amatola;Plant Africa;;553
+0;2RAL554;Loader;CX900955KKOH00;XGMA;Loader ;0;20;5 Ton;Amatola;Raventa;;554
+ACL3145;2PAZ556;Excavator;LGC920EZPLC120716;Liugong;Excavator;0;25,5;21.5 Ton;Amatola;Plant Africa;;556
+0;2EST557;Tipper;XLRAD85MC0E966848;DAF;Tipper;0;2,2;20t-Tipper;Walden;Earth Shift;;557
+0;2EST558;Tipper;XLRAD85MC0E945713;DAF;Tipper;0;2,2;20t-Tipper;Walden;Earth Shift;;558
+0;2RAT559;Tipper;0;Shacman;Tipper ;0;2,2;20t-Tipper;Amatola;Raventa;;559
+AFQ 6733;2KHT560;Tipper;XLRAD85MC0E823018;DAF;Tipper ;0;2,2;20t-Tipper;Walden;Kan Horizon ;;560
+AEC 6751;2SCT561;Tipper;LZZ5EXSC7PA113410;HOWO;Tipper;0;2,2;30t-Tipper;Walden;Simlex Coach;;561
+0;2ESL562;Loader;XUG0050GADC808984;XCMG;Loader ;0;20;5 Ton ;Walden;Earth Shift;;562
+AGB3812;2MLZ563;Excavator;LL13010026;KOBELCO;Excavator;0;37;26 Ton;Walden;Methusela;;563
+0;2UCT564;Tipper;LZZ5EXSC8PN259758;HOWO;Tipper;0;2,2;30t-Tipper;Walden;Urban Craft;;564
+AGZ3453;2UCT565;Tipper;LZZ5EXSC8PN043439;HOWO;Tipper;0;2,2;30t-Tipper;Walden;Urban Craft;;565
+AGJ8145;2UCT566;Tipper;LZZ5EXSC7RN293466;HOWO;Tipper;0;2,2;30t-Tipper;Walden;Urban Craft;;566
+AHA 1955;2MLL567;Loader;XUG00958ARC318802;XCMG;Loader;0;20;5 Ton ;Walden;Methusela;;567
+AGJ3726;2RAT568;Tipper;0;SHACMAN;Tipper ;0;2,2;40t-Tipper;Amatola;Raventa;;568
+AGJ 6608;2RAT569;Tipper;0;SHACMAN;Tipper ;0;2,2;40t-Tipper;Amatola;Raventa;;569
+AGL7836;2RAT570;Tipper;0;SHACMAN;Tipper ;0;2,2;40t-Tipper;Amatola;Raventa;;570
+0;2PAT571;Grabber;0;Volvo;Grabber;0;0;20 ton ;Amatola;Plant Africa;;571
+AGJ1978;2RAZ572;Excavator;WLHZ1545VZD058951;LIEBER 920;Excavator;0;25,5;22 Ton;Amatola;Raventa;;572
+AGP6321;2RAZ573;Excavator;0;Hyundai;Excavator;0;25,5;20 Ton;Amatola;Raventa;;573
+AGL4076;2PAZ574;Excavator;0;Shantui SE220;Excavator;0;25,5;20 Ton;Amatola;Plant Africa;;574
+AGZ 6165;2PAZ575;Excavator;0;Hyundai 305;Excavator;0;25,5;20 Ton;Amatola;Plant Africa;;575
+AGL5926;2PAZ576;Excavator;0;Hyundai;Excavator ;0;25,5;20 Ton;Amatola;Plant Africa;;576
+AGZ3144;2KCT577;Tipper;0;Shacman;Tipper ;0;2,2;40t-Tipper;Amatola ;Kiwi Carter;;577
+AGZ 0922;2RAT578;Tipper;0;Shacman;Tipper ;0;2,2;40t-Tipper;Amatola;Raventa;;578
+0;2RAT579;Tipper;0;Shacman;Tipper;0;2,2;40t-Tipper;Amatola;Raventa;;579
+AFQ5323;2RAT580;Tipper;0;Shacman;Tipper ;0;2,2;40t-Tipper;Amatola;Raventa;;580
+AGN 6186;2UCT581;Tipper;LLZ5EXSC6PN259757;HOWO;Tipper ;0;2,2;30t-Tipper;Walden;Urban Craft;;581
+0;2UCT582;Tipper;LZZ53SC7PN260786;HOWO;Tipper ;0;2,2;30t-Tipper;Walden;Urban Craft;;582
+0;2RR583;Mini Bus;0;Nissan;Mini Bus ;0;0;15 seater;Amatola;Royal Ride;;583
+n/a;2RAT585;Tipper;0;Shacman;Tipper ;0;2,2;20t-Tipper;Amatola;Raventa;;585
+0;2RAT586;Tipper;0;Shacman;Tipper ;0;2,2;20t-Tipper;Amatola;Raventa;;586
+AGJ 4476;2RAT587;Tipper;0;Shacman;Tipper ;0;2,2;20t-Tipper;Amatola ;Raventa;;587
+0;2MLL588;Loader;XUG00958HRCB18799;XCMG;Loader;0;20;5 Ton ;Walden;Methusela;;588
+0;2KCT589;Tipper;0;Shacman;Tipper ;0;2,2;40t-Tipper;Amatola;Kiwi Carter;;589
+AGE 0735;2EST590;Tipper;LZZPDXVCXPJ297460;HOWO;Tipper ;0;2,2;30t-Tipper;Walden;Earth Shift;;590
+0;2EST591;Tipper;LZZPDXVC4PJ296756;HOWO;Tipper ;0;2,2;30t-Tipper;Walden;Earth Shift;;591
+0;2PAZ592;Excavator;0;JCB;Excavator;0;25,5;20 Ton;Amatola;Plant Africa;;592
+AFQ 5200;2DNZ593;Excavator;0;XMG225;Excavator;0;25,5;22 Ton;Amatola;Danda;;593
+0;2PAZ594;Excavator;0;Hyundai 220;Excavator;0;25,5;22 Ton;Amatola;Plant Africa;;594
+0;2PAZ595;Excavator;0;Sany ;Excavator;0;4;5 Ton ;Amatola;Plant Africa;;595
+MXT 1740;2RR596;Nissan;0;Nissan Hardbody;Pick up;0;0;1 ton;Amatola;Royal Ride;;596
+TS 80;2PAT597;Grabber;0;VOLVO;Grabber ;0;0;20 ton ;Amatola ;Plant Africa;;597
+AGJ  3021;2PAT598;Grabber;0;VOLVO;Grabber ;0;0;20 ton ;Amatola;Plant Africa;;598
+AGR5584;2CMT599;Tipper;LZZ5ELSE9PN255941;HOWO;Tipper;0;2,2;30t-Tipper;Walden;CR7 Mine;;599
+ACZ 0361;2CMT600;Tipper;LZZ5DLVD2RT108333;HOWO;Tipper;0;2,2;30t-Tipper;Walden;CR7 Mine;;600
+AGR5589;2EGZ601;Excavator;21SE2200122291;SANY SY220C;Excavator;0;25,5;22 Ton;Amatola;EG Construction ;;601
+ADY 8000 ;2RAZ602;Excavator;HYNDN633PE0008406;HYUNDAI R215;Excavator;0;25,5;22 Ton;Amatola;Raventa;;602
+0;2RUT603;Tipper;0;HOWO;Tipper ;0;2,2;20t-Tipper;Amatola;Raventa (U Link);;603
+0;2RUT604;Tipper;0;HOWO;Tipper ;0;2,2;20t-Tipper;Amatola;Raventa (U Link);;604
+0;2WTP605;Pool;0;Benz;Pool;0;0;10ton;Walden;Willo & TH Safety;;605
+AGR5546 ;1MMM606;Motorbike;R66SYK212S1000583;RGR;Motorbike;0;0;2 wheeler;Amatola;Magaya Mining;;606
+AGR5909 ;1MMM607;Motorbike;R66SYK216S1000585;RGR;Motorbike;0;0;2 wheeler;Amatola;Magaya Mining;;607
+AGR5549 ;1MMM608;Motorbike;R66SYK211S1000588;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;608
+0;1MMM609;Motorbike;R66SYK21XS1000590;RGR;Motorbike ;0;0;2 wheeler ;Amatola ;Magaya Mining;;609
+AGR5907 ;1MMM610;Motorbike;R66SYK213S1000592;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;610
+0;1MM611;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;611
+ADQ 9977;1MM612;Motorbike ;R66SYK210S1000646;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;612
+AEZ5864;1MMM613;Motorbike;R66SYK212S1000647;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;613
+0;1MMM614;Motorbike;R66SYK214S1000648;RGR;Motorbike ;0;0;2 wheeler;Amatola;Magaya Mining;;614
+EX15;1MMM615;Motorbike;R66SYK212S1000650;RGR ;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;615
+0;1MMM616;Motorbike;R66SYK216S1000666;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;616
+AGP9721;1MMM617;Motorbike;R66SYK214S1000679;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;617
+0;1MMM618;Motorbike;R66SYK215S1000688;RGR;Motorbike;0;0;2 wheeler ;Amatola;Magaya Mining;;618
+AGJ0500;1MMM619;Motorbike;R66SYK216S1000697;RGR;Motorbike;0;0;2 wheeler ;Amatola ;Magaya Mining;;619
+0;1MMY620;Tri-Cycle;L4UZDM105R8000597;RGR ;Tri cycle;0;0;3 wheeler ;Amatola ;Magaya Mining;;620
+0;1MMY621;Tri-Cycle;L4UZDM106R8000592;RGR ;Tri cycle;0;0;3 wheeler ;Amatola;Magaya Mining;;621
+AGL8138;2NTP622;Pool;0;0;5 Ton;0;0;0;Walden;NT Transport;;622
+AHA 1954;2MLZ623;Excavator;86SE21DKNJ0000223;Shantui;Excavator;0;25,5;22 Ton;Walden;Methusela;;623
+AGL7313;2UCT624;Tipper;PN259759;HOWO;Tipper;0;2,2;20t-Tipper;Walden;Urban Craft;;624
+336D2L;2UCT625;Tipper;LZZ5EXSC9RN293467;HOWO;Tipper;0;2,2;30t-Tipper;Walden;Urban Craft;;625
+0;2UCZ626;Excavator;CAT0336DKHBK10214;CAT;Excavator;0;25,5;22 Ton;Walden;Urban Craft;;626
+0;2BST627;Tipper;XLEP8X40005147927;SCANIA P340;Tipper;0;2,2;20t-Tipper;Walden;Bousier Investment;;627
+JS205;2RAS628;Tractor;0;SONALIKA RX75;Tractor;0;0;75 hp;Amatola;Raventa;;628
+AEU9909;2RAS629;Tractor;0;NEWHOLLAND TS90;Tractor;0;0;90 hp;Amatola;Raventa;;629
+0;2SRP630;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;630
+0;2PAZ631;Excavator;HHKHN623HJ0003184;HYUNDAI 220LC;Excavator;0;25,5;22 Ton;Amatola;Plant Africa;;631
+AGJ8665;2PAT632;Grabber;0;VOLVO;Grabber ;0;0;20t-Grabber;Amatola;Plant Africa;;632
+ABS6419;2EGC633;Compactor;CXG0614HLK00500119;XGMA;Compactor;0;0;10 ton ;Amatola;EG Construction ;;633
+AGL0562;2VET634;Tipper;0;HOWO 371;Tipper;0;2,2;20t-Tipper;Walden;Vicemode Engineering;;634
+AGZ0732;2MMP635;Pool;0;0;Pool;0;0;0;Walden;Magaya Mining;;635
+0;2PAZ636;Excavator;0;Shantui;Excavator;0;25,5;22 Ton;Amatola;Plant Africa;;636
+AFJ0851;2RUZ637;Excavator;0;VOLVO;Excavator;0;25,5;22 Ton;Amatola;Raventa (U Link);;637
+AGJ9006;2MLS638;Tractor;0;New Holland;Tractor;0;0;7t-Tractor;Walden;Methusela;;638
+AFJ1227;2MLG639;Grader;CAT01400MVB9D02143;CAT;Grader;0;0;Grader;Walden;Methusela;;639
+AGL5856;2RRP640;Pool;0;HINO;HINO;0;0;2 Ton;Amatola;Royal Ride;;640
+0;2SCB641;Bus;LDY4GLABXM0020571;Zhong tong;75 seater;0;0;75 seater;Walden;Simlex Coach;;641
+AGE 0270;2MLL642;Loader;XUG0050GHPCB130011;XCMG;Loader - 5.5 Ton;0;20;5 Ton ;Walden;Methusela;;642
+0;2KTT643;Tipper;LZZ5ELSD5MN944118;HOWO;Tipper;0;2,2;20t-Tipper;Walden;Krypton ;;643
+ADS 3880;2KTT644;Tipper;LZZ5ELSD7MN942466;HOWO;Tipper;0;2,2;20t-Tipper;Walden;Krypton ;;644
+0;2EST645;Grabber;XLRAD85MCOE970950;DAF;Grabber;0;0;20t-Grabber;Walden;Earth Shift;;645
+0;2MCT646;Tipper;YV2JG10GXCB627208;VOLVO;Tipper;0;2,2;20t-Tipper;Walden;Maidei Chitsinde;;646
+0;2SCB647;Bus;22040618B;Zhong tong;Bus;0;0;75 seater;Walden;Simlex Coach;;647
+AGJ 3458;2MLT648;Tipper;LZGJLDT42RX099564;Shacman;Tipper;0;2,2;20t-Tipper;Walden;Methusela;;648
+0;2MLT649;Tipper;LZGJLDT47RX099575;Shacman;Tipper;0;2,2;20t-Tipper;Walden;Methusela;;649
+0;2MLV650;Hydraulic Excavator;WLHZ1545P100497226;SB81 TR-F;Excavator - 1 830 kg;0;0;Hydraulic Excavator;Walden;Methusela;;650
+0;2CMJ651;TLB;0;NEW HOLLAND;TLB;0;5,5;3 Ton;Walden;CR7 Mine;;651
+AGR5905 ;2APT652;Tipper;0;DAF;Grabber;0;2,2;20t-Grabber;Walden;Apex;;652
+0;2MLN653;Concrete Mixer;BX14M00535;FIORO;0;0;0;0;Walden;Methusela;;653
+0;2WTP654;Pool;WDB9700672K778933;Benz;Pool;0;0;7-ton;Walden;Willo & TH Safety;;654
+AEU 9563 ;2ESK655;Lower Bed ;WMAH18ZZ7W061869;MAN DIESEL;LOW BED;0;0;20-TON;Walden;Earth Shift;;655
+AGR3538 ;2CMJ656;TLB;HAR3DXTTTS3493010;JCB;TLB;0;5,5;3 Ton;Walden;CR7 Mine;;656
+0;2TLF657;Tellehandler;0;MANITOU;Forklift ;0;4,5;4 Ton;Walden;TLS;;657
+0;2LTT658;Tipper;LZZ5EXSC2RN300551;Sino ;Tipper;0;2,2;30t-Tipper;Walden;Logi Trans;;658
+AGR5904 ;2LTT659;Tipper;LZZ5EXSC0RN300550;Sino ;Tipper;0;2,2;30t-Tipper;Walden;Logi Trans;;659
+0;2LTT660;Tipper;YS2P8X40005328649;SCANIA;Tipper;0;2,2;20t-Tipper;Walden;Logi Trans;;660
+0;2EGT661;Tipper;LZZ5ELSD8MA918281;Howo;Tipper;0;2,2;20t-Tipper;Walden;EG Construction ;;661
+AGR3534 ;2CCT662;Tipper;LZZ5EXSD2GN132528;Howo;Tipper;0;2,2;30t-Tipper;Walden;Connect Cut;;662
+0;2MLZ663;Excavator;KCMOYOQ12CJ0009973;KOBELCO;Excavator;0;25,5;22 Ton;Walden;Methusela;;663
+0;2HGT664;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;664
+AGR5902 ;2HGT665;Tipper;LZZ5EXSC5SD365745;Howo;ZZ3317N356GB1R;371hp;2,2;30t-Tipper;Walden;HarvGood;;665
+AGR2638 ;2HGT666;Tipper;LZZ5EXSC7SD365794;Howo;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;666
+0;2HGT667;Tipper;0;HOWO;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;667
+0;2HGT668;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;668
+0;2LTT669;Tipper;LZZ5EXSC6PA126200;Howo;Tipper;0;2,2;30t-Tipper;Walden;Logi Trans;;669
+0;2HGT670;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;670
+CRC011;2HGT671;Tipper;LLZ5DYSC7ST100193;HOWO;ZZ3312V3567B1R;0;2,2;30t-Tipper;Walden;HarvGood;;671
+0;2HGT672;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;672
+0;2TIL673;Loader;XUG00958JSCB12905;XCMG;Loader - 5.5 Ton;0;20;5 Ton ;Amatola;Thinkstock Investments Pvt Ltd;;673
+AGJ 6516;2ESL674;Loader;SW956K3CF2528;SANY Wheel Loader;SW956K1;0;20;5 Ton ;Walden;Earth Shift;;674
+0;2MUT675;Tipper;LZZ5DLSD3RD239074;Howo;Tipper;0;2,2;20t-Tipper;Walden;Muvhuni Investments ;;675
+AEZ 2594;2MUT676;Tipper;LZZ5EXSC9RD238703;Howo;Tipper;0;2,2;30t-Tipper;Walden;Muvhuni Investments ;;676
+0;2SCB677;Bus;JTEFB518001022549;TOYOTA;Staff Bus;0;0;30 seater;Chakari;Simlex Coach;;677
+0;2MHT678;Tipper;LZZ5EXSCORN297343;Howo;Tipper;0;2,2;30t-Tipper;Walden;Merchain Logistics;;678
+0;2APT679;Tipper;XLRAD85M0E940159;DAF;Tipper;0;2,2;20t-Tipper;Walden;Apex;;679
+0;2FQT680;Tipper;WMA37SZZ6CM580103;MAN;Tipper;0;2,2;20t-Grabber;Walden;First Quantum Resources;;680
+0;2MLZ681;Excavator;SHAJE20BHK2750505;JCB;Excavator - JS205LC;0;25,5;22 Ton;Walden;Methusela;;681
+0;2TMT682;Tipper;LZZ5ELSD6SD326423;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;682
+0;2TMT683;Tipper;LZZ53LSD0SD326420;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;683
+AGZ2533;2TMT684;Tipper;LZZ5ELSD8SD326410;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;684
+0;2TMT685;Tipper;LZZ5ELSD9SD326433;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;685
+AGO4719;2TMT686;Tipper;LZZ5ELSD0SN098462;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;686
+AGL7842;2TMT687;Tipper;LZZ5ELSD9SN098461;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;687
+0;2TMT688;Tipper;LZZ5ELSD0SN098462;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;688
+0;2CNT689;Tipper;VT009GXE3714;Volvo;Tipper;0;2,2;30t-Tipper;Amatola;Continental;;689
+0;2CNT690;Tipper;LZZ6DLSDXPA128083;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Continental;;690
+ADS 0906;2KCT691;Tipper;LZGJLDT45RX09967;Shacman;Tipper;0;2,2;20t-Tipper;Amatola;Kiwi Carter;;691
+AGZ0733;2KCT692;Tipper;LGZJLDT45XR09959;Shacman;Tipper;0;2,2;20t-Tipper;Amatola;Kiwi Carter;;692
+0;2KCT693;Tipper;LGZJLDT45XR09968;Shacman;Tipper;0;2,2;20t-Tipper;Amatola;Kiwi Carter;;693
+AGJ7105;2UGT694;Tipper;LZZ5ELSD0PA110512;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Uge;;694
+0;2UGT695;Tipper;LZZ5ED9PA120991;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Uge;;695
+0;2HGT696;Tipper;LZZ5ELSD0PA110737;HOWO;ZZ2357N3847B1R;371;2,2;20t-Tipper;Walden;HarvGood;;696
+0;2HGT697;Tipper;LZZ5ELSD8PA110517;Sino ;Tipper;0;2,2;20t-Tipper;Amatola;HarvGood;;697
+AEG6678;2EXZ698;Excavator;YN15506089;KOBELCO;Excavator;0;25,5;21.5 Ton;Chakari;EarthworX;;698
+AGL8028;2HGT699;Tipper;LZZ5EXSC5SD365793;Howo;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;699
+0;2HGT700;Tipper;LZZ5EXSC4SD365798;Howo;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;700
+0;2MLT701;Tipper;LZGJLDT40RX099594;Shacman;Tipper;0;2,2;20t-Tipper;Walden;Methusela;;701
+AGR 3708;2MLT702;Tipper;LZGJLDT44RX099582;Shacman;Tipper;0;2,2;20t-Tipper;Walden;Methusela;;702
+0;2EXZ703;Excavator;SHAJE20BHK250505;JCB;Excavator - JS205LC;0;25,5;21.5 Ton;Chakari;EarthworX;;703
+0;2ESL704;Loader;XUG0050GADCB08996;XCMG;Loader;0;20;5 Ton ;Walden;Earth Shift;;704
+0;1MMM705;Motorbike;R66SYK212S1000695;RGR;Motor Bike;0;0;2 wheeeler;Amatola;Magaya Mining;;705
+AGR5544 ;2HGT706;Tipper;LZZ5DYSC5ST100192;HOWO;Tipper;0;2,2;30t-Tipper;Amatola;HarvGood;;706
+0;2HGT707;Tipper;LZZ5EXSCXSD365742;Sino ;Tipper;0;2,2;30t-Tipper;Amatola;HarvGood;;707
+0;2HGT708;Tipper;LZZ5EXSC2SD365795;Sino ;Tipper;0;2,2;30t-Tipper;Amatola;HarvGood;;708
+0;2HGT709;Tipper;LZZ5EXSC1SD365743;Sino ;Tipper;0;2,2;30t-Tipper;Amatola;HarvGood;;709
+0;2RAT710;Tipper;LZZ5DLSD3PN256626;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Raventa;;710
+AFG 9127;2RAT711;Tipper;LZZ5DLSD1PN256625;Howo;Tipper;0;2,2;20t-Tipper;Amatola;Raventa;;711
+0;2ESG712;Grader;HEXZH00792;CAT 140 H;Grader;0;0;Grader;Walden;Earth Shift;;712
+AGR5903 ;2HGT713;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;713
+ACX 8223;2HGT714;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;714
+AEB 2555;2HGT715;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;715
+0;2ESC716;Compactor;CATCS533CTJL07060;CAT - 533E;Compactor;0;0;0;Walden;Earth Shift;;716
+AGR4553 ;2HGT717;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;717
+0;2WTT718;Tipper;YV2J4CJD13A555328;Volvo;Tipper;0;2,2;20t-Tipper;Walden;Willo & TH Safety;;718
+AGP9720;2TMT719;Tipper;LZZ5ELSD2S326418;Sino ;Tipper;0;2,2;20t-Tipper;Walden;Tombest;;719
+0;1MMY720;Tri-Cycle;LJCHCMZY3SS4421;RGR ;Tri cycle;0;0;3 wheeler ;Walden;Magaya Mining;;720
+AGJ0493;1MMU721;Tractor Dumper;0;0;Tractor Dumper;0;0;0;Walden;Magaya Mining;;721
+CRC012;1MMU722;Tractor Dumper;0;0;Tractor Dumper;0;0;0;Walden;Magaya Mining;;722
+0;1MMU723;Tractor Dumper;0;0;Tractor Dumper;0;0;0;Walden;Magaya Mining;;723
+CRC013;1MMU724;Tractor Dumper;0;0;Tractor Dumper;0;0;0;Walden;Magaya Mining;;724
+0;1MMZ725;Excavator;0;0;Excavator;0;25,5;22 Ton;Walden;Magaya Mining;;725
+0;1MMTI726;Trailer;0;0;Trailer;0;0;15 Ton trailer;Walden;Magaya Mining;;726
+0;1MMU727;Tractor Dumper;0;0;Tractor Dumper;0;0;0;Walden;Magaya Mining;;727
+0;1MMU728;Tractor Dumper;0;0;Tractor Dumper;0;0;0;Walden;Magaya Mining;;728
+0;1MMM729;Motorbike;0;0;Motorbike;0;0;0;Walden;Magaya Mining;;729
+0;1MMYK730;Tri-Cycle shell;0;0;Tri-Cycle shell;0;0;0;Walden;Magaya Mining;;730
+0;1MMYK731;Tri-Cycle shell;0;0;Tri-Cycle shell;0;0;0;Walden;Magaya Mining;;731
+AFQ 6732;1MMDR732;Drawbar;0;0;Ingersoll Rand;0;0;2.4 Bar;Walden;Magaya Mining;;732
+0;1MMDR733;Drawbar;0;0;Altas Copco;0;0;2.7 Bar;Walden;Magaya Mining;;733
+0;1MMDR734;Drawbar;0;0;Ingersoll Rand;0;0;0;Walden;Magaya Mining;;734
+0;1MMTD735;Tractor Drawn;0;0;Water bowser(Tractor drawn);0;0;0;Walden;Magaya Mining;;735
+AEZ 5047;1MMTD736;Tractor Drawn;0;0;Water bowser(Tractor drawn);0;0;0;Walden;Magaya Mining;;736
+0;1MMCN737;Canopy;0;0;Single cab canopy;0;0;0;Walden;Magaya Mining;;737
+AGZ 6207;2UFL738;Loader;CXGOO955LJOH0685;XCMG;Loader;0;20;5 Ton ;Walden;U-freight link;;738
+AGZ5364;2UFL739;Loader;CXG00955CMON00833;XCMG;Loader;0;20;5 Ton ;Walden;U-freight link;;739
+n/a;2UFZ740;Excavator;KCMOLL13JJ0007087;KOBELCO;Excavator;0;25,5;26 Ton;Walden;U-freight link;;740
+AGL7839;2TIL741;Loader;LFG0855HKSB703990;LONGKING;Loader;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;741
+0;2ESZ742;Excavator;XUGI2001PNKA18711;XCMG;Excavator;0;25,5;22 Ton;Walden;Earth Shift;;742
+AGL7656;2EST743;Tipper;LZZ5ELSD2SN098477;Howo;Tipper;0;2,2;20t-Tipper;Walden;Earth Shift;;743
+0;2EST744;Tipper;LZZ5ELSD4SN098478;Howo;Tipper;0;2,2;20t-Tipper;Walden;Earth Shift;;744
+0;1MMX745;Generator;5125G001848;Baudouin;Generator;0;0;500KVA;Walden Milling;Magaya Mining;;745
+0;2MEJ746;TLB;TEP9222S3T01151656;MBL-X-920;TLB;0;5,5;3 Ton;Walden;Millantus Enterprises ;;746
+0;2UFR747;Fuel Bowser;0;0;Fuel Bowser;0;0;0;Walden;U-freight link;;747
+AFD9421;1MMX748;Generator;175611;Volvo;Generator;0;0;500KVA;Walden Milling;Magaya Mining;;748
+AGL 0661;2WTT749;Grabber;YV2JN50G46A61081;Volvo;Grabber;0;0;20t-Grabber;Walden;Willo & TH Safety;;749
+AGJ 0706;1MMX750;Generator;H223512;AK4130;Generator;0;0;160KVA;Canteen;Magaya Mining;;750
+AGZ 6182;2MLZ751;Excavator;YN15507348;KOBELCO;SK220XD-10;0;25,5;22 Ton;Walden;Methusela;;751
+AHC 3598;2APT752;Tipper;XLRADM4100G041654;DAF;Tipper;0;2,2;20t-Tipper;Walden;Apex;;752
+n/a;2ESD753;Dozer;CHSD22AWCK1021188;SHANTU;Dozer;0;0;D7;Walden;Earth Shift;;753
+AFQ5028;2MLS754;Tractor;AANTT49R4RN008540;New Holland;tractor;0;0;7-ton;Walden;Methusela;;754
+0;2HGT755;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;755
+0;2MLC755;Compactor;YZ1112CC2641;SANY;Compactor;0;0;12-ton;Walden;Methusela;;755
+0;2ESL756;Loader;SW956K3CF5598;SANY;Loader;0;20;5 Ton ;Walden;Earth Shift;;756
+AGZ0731;2HGT757;Tipper;LZZ5ELSD6PA110516;Howo;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;757
+AFZ1410;2HGT758;Tipper;LZZ5EXSC9SN094022;SINO TRUK;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;758
+0;2HGT759;Tipper;LZZ5EXSC9SN094232;SINOTRUK;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;759
+0;2HGT760;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;760
+AFQ1008;2EST761;Grabber;XLRAD85MC0E800661;DAF;DAF-85.360;0;0;20t-Grabber;Walden;Earth Shift;;761
+0;2UFZ762;Excavator;VCEC200DA00280844;Volvo;EXCAVATOR/ EC200D;0;25,5;22 Ton;Walden;U-freight link;;762
+0;2HGT763;Tipper;LZZDDXSC1RT114896;Howo;ZZ3312N3567B1R;0;2,2;30t-Tipper;Walden;HarvGood;;763
+0;2HGT764;Tipper;LZZDDXSC1RT114901;Howo;ZZ3312N3567B1R;0;2,2;30t-Tipper;Walden;HarvGood;;764
+AGZ 2856;2HGT765;Tipper;LZZDDXSC5RT114093;Howo;ZZ3312N3567B1R;0;2,2;30t-Tipper;Walden;HarvGood;;765
+AGL7840;2HGL766;Loader;VLGL953HAS0620530;SDLG-L953H;Loader - WD10G220E21;0;20;5 Ton ;Walden;HarvGood;;766
+MXT1740;2HGL767;Loader;VLGL956HES0621337;SDLG-L956H;Loader - WD10G220E23;0;20;5 Ton ;Walden;HarvGood;;767
+AGZ 5102;2HGL768;Loader;VLGL956HVS0621364;SDLG-L956H;Loader - WD10G220E23;0;20;5 Ton ;Walden;HarvGood;;768
+0;2UFL769;Loader;CXG00955KK0H00180;XG955H;Loader;0;20;5 Ton ;Walden;U-freight link;;769
+AGL 0245;2WTP770;Pool;0;UD40;Truck;0;0;4 Tons;Walden;Willo & TH Safety;;770
+0;2DCT771;Grabber;XLEP8X40005239854;SCANIA;Grabber;0;0;20t-Grabber;Walden;Detame  Cate Pvt;;771
+ES TLB 2;2PAL772;Loader;XUG0500FCJB13094;XCMG;Loader;0;20;5 Ton;Amatola;Plant Africa;;772
+0;2PAJ773;TLB;TEP920S3C01161814;Manitou;TLB;0;5,5;3 Ton ;Amatola;Plant Africa;;773
+0;2MEJ774;TLB;NJ0570TCNKH31856;CASE;TLB;0;5,5;3 Ton ;Amatola;Millantus Enterprises ;;774
+0;2MEJ775;TLB;ME178125;Manitou;TLB;0;5,5;3 Ton;Amatola;Millantus Enterprises ;;775
+ABE 1014;2MEL776;Loader;SW9533CEM0298;SANY;Loader;0;20;5 Ton;Amatola;Millantus Enterprises ;;776
+AFJ6753;2MEL777;Loader;SW95333CDM1228;SANY;Loader;0;20;5 Ton;Amatola;Millantus Enterprises ;;777
+0;2MEJ778;TLB;HAR3DXTTCS3493322;JCB;TLB;0;5,5;3 Ton;Amatola;Millantus Enterprises ;;778
+AGJ8662;2MEJ779;TLB;HAR3DXTTJS3493321;JCB;TLB;0;5,5;3 Ton;Amatola;Millantus Enterprises ;;779
+0;2TMT780;Tipper;LZZ5ELSD0SD374094;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;780
+0;2TMT781;Tipper;LZZ5ELSD2SD374095;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Tombest;;781
+0;2FEL782;Loader;CLW009LFTSM001137;LOVOL;Loader;0;20;5 Ton;Amatola;Friendly Environment Services;;782
+AJF 3091;2SEL783;Loader;CXG00936HP0N0067;XCMG;Loader;0;20;5 Ton;Amatola;Smba East;;783
+AES 4365;2SIL784;Loader;SW956K3CF6208;SANY ;Loader;0;20;5 Ton;Amatola;Sharock Investment;;784
+AGG4673;2SIL785;Loader;SW956K3CF6872;SANY ;Loader;0;20;5 Ton;Amatola;Sharock Investment;;785
+0;2TST786;Tipper;LZZ5DLVD9RT116672;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;786
+ACB3055;2TST787;Tipper;LZZ5DLLVD2RT116674;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;787
+0;1MMX788;Generator;5125G001791;Baudouin;Generator;0;0;490kW;Walden milling;Magaya Mining;;788
+0;2HGT789;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;789
+0;2ESG790;Grader;10Z46868FCD03034;CAT;Grader;0;0;Grader;Walden;Earth Shift;;790
+AGP5639;2TIL791;Loader;VLGL956FPS0626959;SDLG-L956F;Loader-WD10G220E23;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;791
+AFS1824;2MHT792;Tipper;LZZ5ELSD1SD326426;SINOTRUCK - WD615.47;Tipper-ZZ3257N384GB1R;0;2,2;20t-Tipper;Walden;Merchain Logistics;;792
+AGP5637;2WTP793;Pool;XLRAE65GC0E964382;DAF TRUCK;0;0;0;10 Ton;Walden;Willo & TH Safety;;793
+AGJ5976;2ZIL794;Loader;CAT0928HHCXK01820;CAT;Loader;0;20;5 Ton ;Walden;Zipnac Investment;;794
+0;2HGL795;Loader;VLGL953HES0620581;SDLG-L953H;Loader - WD10G220E21;0;20;5 Ton ;Walden;HarvGood;;795
+ADL9054;2HGT796;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;796
+AGP5640;2HGT797;Tipper;LZZ5EXSC5SN094230;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;797
+0;2HGT798;Tipper;LZZ5EXSC5SN094017;SINOTRUK - WD615.47; ;0;2,2;30t-Tipper;Walden;HarvGood;;798
+0;2MOJ799;TLB;HAR3CXPMJS3525884;JCB;TLB;0;5,5;1.5 Ton;Walden;Mandebvu Contracting;;799
+0;2HGT800;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;800
+AFJ6667;2HGT801;Tipper;LZZ5EXSC9SN094019;HOWO;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;801
+0;2HGT802;Tipper;0;HOWO;Tipper;0;2,2;30t-Tipper;Walden;HarvGood;;802
+AFJ7599;2HGT803;Tipper;LZZ5EXSC5SN094020;HOWO;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;803
+AFQ2394;2MLW804;Water Bowser;LZZ5BLVF6RT114384;0;Water Bowser;0;0;20000L;Walden;Methusela;;804
+0;2HGZ805;Excavator;SY037CF1117K8;SANY ;Excavator;0;37;38 Ton;Walden;HarvGood;;805
+0;2MLJ806;TLB;NKJOB80CKSKH44937;New Holland;TLB;0;5,5;1.5 Ton;Walden;Methusela;;806
+0;2UFT807;Tipper;LZGJRDV62PX080765;Shacman;Tipper;0;2,2;40t-Tipper;Walden;U-freight link;;807
+AGJ0314;2UFT808;Tipper;LZGJRDV64PX080766;Shacman;Tipper;0;2,2;40t-Tipper;Walden;U-freight link;;808
+0;2HGT809;Tipper;221207031397/XK06-002-00436;SINOTRUCK - WD615.47;Tipper;0;2,2;20t-Tipper;Walden;HarvGood;;809
+AFO9812;2HGT810;Tipper;21207034787/XK06--002-00436;SINOTRUCK - WD615.47;Tipper;0;2,2;20t-Tipper;Walden;HarvGood;;810
+0;2TST811;Tipper;LZZ5DLSD7PN256564;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;811
+AGL7333;2TST812;Tipper;LZZ5ELSD3MN944117;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;812
+0;2TST813;Tipper;LZZ5ELND3KA539214;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;813
+0;2TST814;Tipper;LZZ5ELND2KA539219;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;814
+0;2TST815;Tipper;LZZ5ELND9KA539203;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;815
+0;2TST816;Tipper;LZZ5ELND2KA539222;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;816
+0;2TST817;Tipper;LZZ5DCSD7RN263419;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;817
+0;2TST818;Tipper;LZZ5DCSD2RN263408;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Try Sky;;818
+0;2SIT819;Tipper;LZZDDLSD4RJ353324;HOWO;Tipper;0;2,2;20t-Tipper;Amatola;Sharock Investment;;819
+0;2SIT820;Tipper;XLRAD95MGOE932869;DAF ;20t-Grabber;0;2,2;20t-Grabber;Amatola;Sharock Investment;;820
+AGJ 4688;2SIT821;Tipper;LZZSELND3HN562278;SINO ;Tipper;0;2,2;20t-Tipper;Amatola;Sharock Investment;;821
+AGL 8128;2SIZ822;Excavator;CAT00330CTJH10002;CAT;30T EXCAVATOR;0;37;20 Ton;Amatola;Sharock Investment;;822
+0;2CRT823;Tipper;WBD9642302005099;BENZ;20t-Grabber;0;2,2;20t-Grabber;Amatola;Crebal;;823
+0;2MEZ824;Excavator;NKJ22CCLMCSKA01793;CASE;22T EXCAVATOR;0;25,5;22 Ton;Amatola;Millantus Enterprises ;;824
+0;2MLT825;Tipper;LZGJLDT4XRX096430;Shacman;Tipper;0;2,2;20t-Tipper;Walden;Methusela;;825
+0;2TLF826;Tellehandler;TEPP1740A01172277;MANITOU;Tellehandler;0;4,5;4 Ton;Walden;TLS;;826
+0;2SCB827;Bus;B120251241;ZHONG TONG;Bus;0;0;65 Seater;Walden;Simlex Coach;;827
+0;2TIL828;Loader;LSH050HCVSAA06043;Lon King;Loader;0;20;5 Ton ;Walden;Thinkstock Investments Pvt Ltd;;828
+0;2TMT829;Tipper;ZZ3257N384GB1R;HOWO;Tipper;0;2,2;20t-Tipper;Walden;Tombest;;829
+0;2HGL830;Loader;VLGL9530ER0622996;LG953;WD10G220E21;0;20;5 Ton ;Walden;HarvGood;;830
+0;2DCT831;Tipper;LZZ1ELSFGM063596;HOWO;ZZ3257N464701;0;2,2;20t-Tipper;Chakari;Detame  Cate Pvt;;831
+0;2BQL832;Loader;VLGL9530LR0622896;SDLG;Loader;0;0;5 Ton ;Walden;Benrique Reva Pvt Limited;;832
+0;2WTT833;Tipper;7163612;Volvo;Tipper;0;2,2;20t-Tipper;Walden;Willo & TH Safety;;833
+AGA0171;2HGT834;Tipper;LZZ5EXVD0PN260312;HOWO;ZZ33117V3867B1R;400;2,2;30t-Tipper;Walden;HarvGood;;834
+0;2HGT791;Tipper;LZZ5EXVD6SN306542;HOWO;ZZ33117V3867B1R;371;2,2;30t-Tipper;Walden;HarvGood;;835
+0;2HGT845;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;845
+AGJ 3474;2HGT849;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;849
+0;2HGT850;Tipper;LZZ5EXCXSD465226;HOWO;ZZ3317N356GD1R;0;2,2;30t-Tipper;Walden;HarvGood;;850
+ADV 2818;2HGT851;Tipper;LZZ5EXSC9SD465220;HOWO;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;851
+0;2HGT852;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;852
+0;2HGT853;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;853
+                                                                                                                                                                                                                 ;2HGT854;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;854
+0;2HGT855;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;855
+0;2HGT856;Tipper;LZZ5EXSC2SD465222;HOWO;ZZ3317N356GB1R;0;2,2;30t-Tipper;Walden;HarvGood;;856
+EX14;2HGT857;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;857
+AGJ2521;2HGT858;Tipper;0;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;858
+0;2HGT864;Tipper;LZZDDXSC3RT114092;Howo;ZZ3312N3567B1R;0;2,2;30t-Tipper;Walden;HarvGood;;864
+0;2HGT865;Tipper;LZZ5ELSD2PA110514;HOWO;0;0;2,2;30t-Tipper;Walden;HarvGood;;865
+AGB2067;2TMT866;Grabber;WJMJ3JPS70C312372;IVECO - Grabber;Grabber;0;0;20t-Grabber;Walden;Tombest;;866
+0;2HGT869;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;n/a;;869
+CRC003;2LTT880;Tipper;LZGCR2T69KS202866;SX3315NT406C;0;280kW;0;30t-Tipper;Walden;Logi Trans;;880
+0;2TMT889;Grabber;YS2P6X40001254519;SCANIA ;Grabber;0;2,2;20t-Grabber;Walden;Tombest;;889
+0;2HGT892;Tipper;LZZ5ELSD0NA070690;HOWO;0;0;2,2;20t-Tipper;Walden;HarvGood;;892
+0;2HGT893;Tipper;LZZ5ELSD3PA110733;HOWO;0;0;2,2;20t-Tipper;Walden;HarvGood;;893
+0;2HGT894;Tipper;0;HOWO;0;0;2,2;20t-Tipper;Amaveni;HarvGood;;894
+AGZ5340;2HGT895;Tipper;0;HOWO;0;0;2,2;20t-Tipper;Amaveni;HarvGood;;895
+0;2HGT897;Tipper;0;HOWO;0;0;2,2;20t-Tipper;Amaveni;HarvGood;;897
+0;1MMT899;Tipper;LZGJLDT44SX030008;Shacman;0;380 housepower;2,2;20t-Tipper;Walden;Magaya Mining;;899
+0;2CCS904;Tractor;E2HDL1599228S3;SENALIKA;0;0;0;7ton;Walden;Connect Cut;;904
